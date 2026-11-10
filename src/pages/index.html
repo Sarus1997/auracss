@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="th" data-aura-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuraCSS — Ambient UI Framework</title>
+    <meta
+      name="description"
+      content="เฟรมเวิร์ก CSS ที่ให้แสง กระจกฝ้า และการเคลื่อนไหวมาพร้อมกริดและยูทิลิตี้ครบแบบ Bootstrap"
+    />
+    <link rel="icon" type="image/svg+xml" href="public/images/logo/aura_css_logo.svg" />
+    <link rel="stylesheet" href="dist/aura.css" />
+    <link rel="stylesheet" href="src/pages/showcase.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="showcase-page aura-bg-grid">
+    <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหาหลัก</a>
+    <!-- @include ../components/navbar.html -->
+    <main id="main-content">
+      <!-- @include ../components/hero.html -->
+      <!-- @include marquee.html -->
+      <div class="aura-container">
+        <!-- @include stats.html -->
+        <!-- @include bento.html -->
+        <!-- @include grid-system.html -->
+        <!-- @include components.html -->
+        <!-- @include kit.html -->
+        <!-- @include cta.html -->
+      </div>
+      <!-- @include faq.html -->
+    </main>
+    <!-- @include ../components/footer.html -->
+    <!-- @include ../components/overlays.html -->
+    <script src="dist/aura.js"></script>
+  </body>
+</html>

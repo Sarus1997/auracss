@@ -1,0 +1,223 @@
+/* Close button · Tooltip · Popover · Offcanvas · Collapse */
+.aura-btn-close {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--aura-surface-2);
+  color: var(--aura-text);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: var(--aura-transition)
+}
+
+.aura-btn-close:hover {
+  background: rgba(var(--aura-rose-rgb), .25);
+  color: var(--aura-rose);
+  transform: rotate(90deg)
+}
+
+.aura-btn-close:focus-visible {
+  outline: 0;
+  box-shadow: var(--aura-focus-ring)
+}
+
+/* Tooltip แบบ pure CSS:  <button data-aura-tooltip="ข้อความ" data-aura-placement="bottom"> */
+[data-aura-tooltip] {
+  position: relative
+}
+
+[data-aura-tooltip]::after {
+  content: attr(data-aura-tooltip);
+  position: absolute;
+  z-index: var(--aura-z-tooltip);
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translate(-50%, 6px) scale(.96);
+  padding: .4rem .75rem;
+  border-radius: var(--aura-radius-2);
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: var(--aura-fs-xs);
+  font-weight: 500;
+  color: var(--aura-text);
+  background: var(--aura-glass-bg);
+  border: 1px solid var(--aura-glass-border);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--aura-shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--aura-transition)
+}
+
+[data-aura-tooltip]:hover::after,
+[data-aura-tooltip]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0) scale(1)
+}
+
+[data-aura-tooltip][data-aura-placement="bottom"]::after {
+  bottom: auto;
+  top: calc(100% + 10px);
+  transform: translate(-50%, -6px) scale(.96)
+}
+
+[data-aura-tooltip][data-aura-placement="bottom"]:hover::after {
+  transform: translate(-50%, 0) scale(1)
+}
+
+[data-aura-tooltip][data-aura-placement="start"]::after {
+  left: auto;
+  right: calc(100% + 10px);
+  bottom: 50%;
+  transform: translate(6px, 50%) scale(.96)
+}
+
+[data-aura-tooltip][data-aura-placement="start"]:hover::after {
+  transform: translate(0, 50%) scale(1)
+}
+
+[data-aura-tooltip][data-aura-placement="end"]::after {
+  left: calc(100% + 10px);
+  bottom: 50%;
+  transform: translate(-6px, 50%) scale(.96)
+}
+
+[data-aura-tooltip][data-aura-placement="end"]:hover::after {
+  transform: translate(0, 50%) scale(1)
+}
+
+/* Popover (เปิดด้วย hover/focus-within) */
+.aura-popover-wrap {
+  position: relative;
+  display: inline-block
+}
+
+.aura-popover {
+  position: absolute;
+  z-index: var(--aura-z-popover);
+  bottom: calc(100% + 12px);
+  left: 50%;
+  width: max-content;
+  max-width: 280px;
+  transform: translate(-50%, 8px);
+  opacity: 0;
+  visibility: hidden;
+  padding: 1rem;
+  border-radius: var(--aura-radius-4);
+  background: var(--aura-glass-bg);
+  border: 1px solid var(--aura-glass-border);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--aura-shadow-lg);
+  transition: var(--aura-transition)
+}
+
+.aura-popover-wrap:hover .aura-popover,
+.aura-popover-wrap:focus-within .aura-popover,
+.aura-popover.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0)
+}
+
+.aura-popover-title {
+  font-weight: 700;
+  margin-bottom: .25rem
+}
+
+/* Offcanvas — สลับคลาส .show ด้วย aura-extras.js */
+.aura-offcanvas-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--aura-z-offcanvas) - 1);
+  background: rgba(3, 4, 10, .6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--aura-transition)
+}
+
+.aura-offcanvas-backdrop.show {
+  opacity: 1;
+  visibility: visible
+}
+
+.aura-offcanvas {
+  position: fixed;
+  z-index: var(--aura-z-offcanvas);
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: var(--aura-space-5);
+  overflow-y: auto;
+  background: var(--aura-bg);
+  border: 1px solid var(--aura-glass-border);
+  box-shadow: var(--aura-shadow-xl);
+  visibility: hidden;
+  transition: transform var(--aura-duration-slow) var(--aura-ease), visibility var(--aura-duration-slow)
+}
+
+.aura-offcanvas.show {
+  visibility: visible;
+  transform: none
+}
+
+.aura-offcanvas-start {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: min(380px, 90vw);
+  transform: translateX(-100%)
+}
+
+.aura-offcanvas-end {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: min(380px, 90vw);
+  transform: translateX(100%)
+}
+
+.aura-offcanvas-top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: min(40vh, 420px);
+  transform: translateY(-100%)
+}
+
+.aura-offcanvas-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: min(40vh, 420px);
+  transform: translateY(100%)
+}
+
+.aura-offcanvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--aura-space-4)
+}
+
+/* Collapse — animate ความสูงด้วย grid trick */
+.aura-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--aura-duration) var(--aura-ease)
+}
+
+.aura-collapse>* {
+  overflow: hidden;
+  min-height: 0
+}
+
+.aura-collapse.show {
+  grid-template-rows: 1fr
+}

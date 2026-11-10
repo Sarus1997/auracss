@@ -1,0 +1,224 @@
+/* --- MODAL, TOAST, ALERT, TOOLTIP & LOADERS --- */
+.aura-alert {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius-sm);
+  background: var(--aura-surface);
+  color: var(--aura-text);
+}
+
+.aura-alert-info {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.aura-alert-success {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.aura-alert-warning {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.aura-alert-danger {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.aura-alert-dismissible {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.aura-alert-close,
+.aura-toast-close {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  opacity: 0.7;
+}
+
+.aura-alert-close:hover,
+.aura-toast-close:hover {
+  background: var(--aura-surface-hover);
+  opacity: 1;
+}
+
+/* Modal */
+body.aura-modal-open {
+  overflow: hidden;
+}
+
+.aura-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--aura-backdrop);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.aura-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+.aura-modal {
+  background: var(--aura-bg);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius);
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  max-height: min(90vh, 48rem);
+  overflow-y: auto;
+}
+
+.aura-modal-sm { max-width: 360px; }
+.aura-modal-lg { max-width: 760px; }
+.aura-modal-xl { max-width: 1000px; }
+
+.aura-modal-backdrop.active .aura-modal {
+  transform: scale(1) translateY(0);
+  visibility: visible;
+}
+
+/* Toast */
+.aura-toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 2100;
+  pointer-events: none;
+}
+
+.aura-toast {
+  pointer-events: all;
+  min-width: 280px;
+  padding: 1rem 1.25rem;
+  border-radius: var(--aura-radius-sm);
+  background: var(--aura-bg);
+  border: 1px solid var(--aura-border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: var(--aura-blur);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateX(120%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aura-toast.show {
+  transform: translateX(0);
+}
+
+.aura-toast.toast-success {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.aura-toast.toast-error {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.aura-toast.toast-warning {
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+.aura-toast.toast-info {
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+.aura-toast-title {
+  font-weight: 700;
+}
+
+.aura-toast-message {
+  margin-top: 0.2rem;
+  color: var(--aura-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Tooltip */
+.aura-tooltip-box {
+  position: fixed;
+  background: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--aura-border);
+  pointer-events: none;
+  z-index: 2200;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  transform: translate(-50%, -100%);
+  margin-top: -8px;
+}
+
+.aura-tooltip-box.visible {
+  opacity: 1;
+}
+
+/* Spinners & Skeleton */
+.aura-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--aura-border);
+  border-top-color: var(--aura-cosmic);
+  border-radius: 50%;
+  animation: aura-spin 0.7s linear infinite;
+}
+
+.aura-skeleton {
+  min-height: 1rem;
+  border-radius: var(--aura-radius-sm);
+  background: linear-gradient(90deg, var(--aura-surface) 25%, var(--aura-surface-hover) 50%, var(--aura-surface) 75%);
+  background-size: 200% 100%;
+  animation: aura-skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes aura-skeleton-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .aura-toast-container {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .aura-toast {
+    min-width: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1240" width="1240" height="1240" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>Aura CSS Logo (animated, looping orbit)</title>
+  <style>
+    .intro { transform-box: fill-box; transform-origin: center; animation: pop 1.1s cubic-bezier(.2,.9,.3,1.2) both; }
+    .float { animation: float 6s ease-in-out infinite; }
+    .ring  { transform-box: fill-box; transform-origin: center; animation: drift 6s ease-in-out infinite; }
+    .shine { animation: shine 3s ease-in-out infinite; }
+    @keyframes pop {
+      from { opacity: 0; transform: scale(.82) rotate(-6deg); }
+      to   { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-14px); }
+    }
+    @keyframes drift {
+      0%,100% { transform: translate(0,0) rotate(0deg); }
+      50%     { transform: translate(8px,6px) rotate(1.6deg); }
+    }
+    @keyframes shine {
+      0%,100% { opacity: .25; }
+      50%     { opacity: .8; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .intro,.float,.ring,.shine { animation: none; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="gLeg" x1="560" y1="280" x2="330" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2fe6ff"/>
+      <stop offset="0.55" stop-color="#2a55ff"/>
+      <stop offset="1" stop-color="#1f2fe0"/>
+    </linearGradient>
+    <linearGradient id="gBottom" x1="180" y1="900" x2="1100" y2="680" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+      <stop offset="0" stop-color="#27d9ff"/>
+      <stop offset="0.35" stop-color="#2a45f5"/>
+      <stop offset="0.7" stop-color="#2b1fc9"/>
+      <stop offset="0.85" stop-color="#b13cf2"/>
+      <stop offset="1" stop-color="#2fe0ff"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0; -300 -60; 0 0" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <!-- repeat + same first/last color + shift of exactly one gradient length = seamless endless flow -->
+    <linearGradient id="gRing" x1="125" y1="760" x2="620" y2="590" gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+      <stop offset="0" stop-color="#e64df2"/>
+      <stop offset="0.33" stop-color="#3a62ff"/>
+      <stop offset="0.66" stop-color="#7fe9ff"/>
+      <stop offset="1" stop-color="#e64df2"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0; 495 -170" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="gInner" x1="630" y1="420" x2="860" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b3cf0"/>
+      <stop offset="0.6" stop-color="#7a2cf5"/>
+      <stop offset="1" stop-color="#e24df0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="b">
+        <animate attributeName="stdDeviation" values="9;22;9" dur="3s" repeatCount="indefinite"/>
+      </feGaussianBlur>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="spark" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <g class="intro">
+    <g class="float">
+      <g filter="url(#glow)">
+        <!-- back half of the orbit: passes BEHIND the A -->
+        <g>
+          <g opacity="0">
+            <circle r="4.5" fill="#9ff3ff" opacity="0.11" filter="url(#spark)"/>
+            <circle r="1.8" fill="#ffffff" opacity="0.13"/>
+            <animateMotion dur="6s" begin="-0.54s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.54s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="0;1"/>
+          </g>
+          <g opacity="0">
+            <circle r="5.2" fill="#9ff3ff" opacity="0.16" filter="url(#spark)"/>
+            <circle r="2.2" fill="#ffffff" opacity="0.18"/>
+            <animateMotion dur="6s" begin="-0.45s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.45s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="0;1"/>
+          </g>
+          <g opacity="0">
+            <circle r="6.0" fill="#9ff3ff" opacity="0.22" filter="url(#spark)"/>
+            <circle r="2.7" fill="#ffffff" opacity="0.25"/>
+            <animateMotion dur="6s" begin="-0.36s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.36s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="0;1"/>
+          </g>
+          <g opacity="0">
+            <circle r="7.5" fill="#9ff3ff" opacity="0.29" filter="url(#spark)"/>
+            <circle r="3.3" fill="#ffffff" opacity="0.34"/>
+            <animateMotion dur="6s" begin="-0.27s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.27s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="0;1"/>
+          </g>
+          <g opacity="0">
+            <circle r="9.0" fill="#9ff3ff" opacity="0.37" filter="url(#spark)"/>
+            <circle r="3.9" fill="#ffffff" opacity="0.43"/>
+            <animateMotion dur="6s" begin="-0.18s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.18s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="0;1"/>
+          </g>
+          <g opacity="0">
+            <circle r="10.5" fill="#9ff3ff" opacity="0.48" filter="url(#spark)"/>
+            <circle r="4.5" fill="#ffffff" opacity="0.56"/>
+            <animateMotion dur="6s" begin="-0.09s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.09s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="0;1"/>
+          </g>
+          <g opacity="0">
+            <circle r="12.0" fill="#9ff3ff" opacity="0.60" filter="url(#spark)"/>
+            <circle r="5.2" fill="#ffffff" opacity="0.70"/>
+            <animateMotion dur="6s" begin="-0.00s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.00s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="0;1"/>
+          </g>
+        </g>
+
+        <!-- Lower arch + legs -->
+        <path fill="url(#gBottom)" d="M240,740 L170,915 Q290,890 400,880 Q480,790 580,735 Q700,675 790,692 Q860,705 885,885 Q1000,895 1103,915 L910,605 L600,700 Z"/>
+        <path fill="none" stroke="#3be3ff" stroke-width="3" opacity=".7" d="M790,692 Q700,675 580,735 Q480,790 400,880"/>
+
+        <!-- Upper A -->
+        <path fill="url(#gLeg)" d="M553,277 L700,272 L628,415 L497,640 L265,722 Z"/>
+        <path fill="url(#gInner)" d="M700,272 L860,520 L720,568 L628,415 Z"/>
+
+        <!-- Orbit ring -->
+        <g class="ring">
+          <path fill="url(#gRing)" d="M125,760 C140,810 260,800 420,750 C700,670 1000,550 1120,450 C1160,415 1140,380 1060,360 C1000,352 900,358 830,378 C920,370 1030,380 1070,410 C1090,440 1000,490 880,540 C700,610 450,700 280,725 C200,735 170,710 185,685 C215,630 290,570 355,545 C250,575 150,650 125,760 Z"/>
+          <path class="shine" fill="none" stroke="#ffffff" stroke-width="3" d="M420,735 C700,655 1000,545 1110,445"/>
+        </g>
+
+        <!-- front half of the orbit: passes IN FRONT of the A -->
+        <g>
+          <g opacity="0">
+            <circle r="6.0" fill="#9ff3ff" opacity="0.18" filter="url(#spark)"/>
+            <circle r="2.4" fill="#ffffff" opacity="0.18"/>
+            <animateMotion dur="6s" begin="-0.54s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.54s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="1;0"/>
+          </g>
+          <g opacity="0">
+            <circle r="7.0" fill="#9ff3ff" opacity="0.26" filter="url(#spark)"/>
+            <circle r="3.0" fill="#ffffff" opacity="0.26"/>
+            <animateMotion dur="6s" begin="-0.45s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.45s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="1;0"/>
+          </g>
+          <g opacity="0">
+            <circle r="8.0" fill="#9ff3ff" opacity="0.36" filter="url(#spark)"/>
+            <circle r="3.6" fill="#ffffff" opacity="0.36"/>
+            <animateMotion dur="6s" begin="-0.36s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.36s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="1;0"/>
+          </g>
+          <g opacity="0">
+            <circle r="10.0" fill="#9ff3ff" opacity="0.48" filter="url(#spark)"/>
+            <circle r="4.4" fill="#ffffff" opacity="0.48"/>
+            <animateMotion dur="6s" begin="-0.27s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.27s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="1;0"/>
+          </g>
+          <g opacity="0">
+            <circle r="12.0" fill="#9ff3ff" opacity="0.62" filter="url(#spark)"/>
+            <circle r="5.2" fill="#ffffff" opacity="0.62"/>
+            <animateMotion dur="6s" begin="-0.18s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.18s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="1;0"/>
+          </g>
+          <g opacity="0">
+            <circle r="14.0" fill="#9ff3ff" opacity="0.80" filter="url(#spark)"/>
+            <circle r="6.0" fill="#ffffff" opacity="0.80"/>
+            <animateMotion dur="6s" begin="-0.09s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.09s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="1;0"/>
+          </g>
+          <g opacity="0">
+            <circle r="16.0" fill="#9ff3ff" opacity="1.00" filter="url(#spark)"/>
+            <circle r="7.0" fill="#ffffff" opacity="1.00"/>
+            <animateMotion dur="6s" begin="-0.00s" repeatCount="indefinite" path="M140.3,754.3 A520,95 -19 0 0 1123.7,415.7 A520,95 -19 0 0 140.3,754.3"/>
+            <animate attributeName="opacity" dur="6s" begin="-0.00s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;.5" values="1;0"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpmNjZkZGFhNC01MjhkLTRhMTYtOTZhMi04Y2NjNTRhNjYxNWIAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaB06S2idGkHg3QoAd61KjaQAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpiNmVlOTZiMS04NDIxLTRkNzgtYTY2NC0zOGIwYWJmOGUzMGZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoCx+kMlqI/HhWBlxZYV/hwwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggXDhmkSGqBwbmp1ERFOkFHvExOhKblFtsttQa3Vk1HxSkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaGH8Ldv9z+bT1R07FwYIiLkAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYICq8zImRLtEH0ZH7Kp9IWpVV3RV2hgF+Z4ariu2lcbr9ZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSxKZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmY2NmRkYWE0LTUyOGQtNGExNi05NmEyLThjY2M1NGE2NjE1Yi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjQyY2VmYTFlLWRhN2MtNGVmMi04OWI4LThhOWMzZTE2MWJlM3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBcOGaRIaoHBuanUREU6QUe8TE6EpuUW2y21BrdWTUfFKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggFAxuS4XIMbo9Brwg06rwMXosuADSMUbjHTXrqZPnBEGiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggUtZfs5e8aYKAgqvp4ly5Ew1zFoMd+0m3bdDxAkN3nnJ0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQDWmuM/PaitUwhAbM1maPiV146rR1ZXq+NqAEavjeIoSFFEwV8k0wUnkqqI+yVd6zf99lSPNIgC7IFULk4M/9ng=</c2pa:manifest></metadata></svg>

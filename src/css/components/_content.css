@@ -1,0 +1,394 @@
+/* Card parts · List group · Input group · Form check/range · Validation · Timeline · Chip · Kbd */
+.aura-card-header,
+.aura-card-footer {
+  padding: var(--aura-space-3) var(--aura-space-5);
+  margin-inline: calc(var(--aura-space-5) * -1);
+  border-color: var(--aura-border)
+}
+
+.aura-card-header {
+  border-bottom: 1px solid var(--aura-border);
+  margin-top: calc(var(--aura-space-5) * -1);
+  margin-bottom: var(--aura-space-4)
+}
+
+.aura-card-footer {
+  border-top: 1px solid var(--aura-border);
+  margin-bottom: calc(var(--aura-space-5) * -1);
+  margin-top: var(--aura-space-4)
+}
+
+.aura-card-title {
+  font-size: var(--aura-fs-xl);
+  font-weight: 700;
+  margin: 0 0 var(--aura-space-2)
+}
+
+.aura-card-text {
+  color: var(--aura-muted);
+  margin: 0
+}
+
+.aura-card-img-top {
+  width: 100%;
+  display: block;
+  border-radius: var(--aura-radius-3);
+  margin-bottom: var(--aura-space-4)
+}
+
+.aura-card-horizontal {
+  display: flex;
+  gap: var(--aura-space-5);
+  align-items: center
+}
+
+.aura-list-group {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: var(--aura-radius-4);
+  overflow: hidden;
+  border: 1px solid var(--aura-border);
+  background: var(--aura-surface)
+}
+
+.aura-list-group-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .85rem 1.1rem;
+  color: var(--aura-text);
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  text-align: start;
+  transition: var(--aura-transition)
+}
+
+.aura-list-group-item+.aura-list-group-item {
+  border-top: 1px solid var(--aura-border)
+}
+
+a.aura-list-group-item:hover,
+button.aura-list-group-item:hover {
+  background: rgba(var(--aura-cosmic-rgb), .12);
+  padding-inline-start: 1.4rem
+}
+
+.aura-list-group-item.active {
+  background: var(--aura-grad-cosmic);
+  color: #fff
+}
+
+.aura-list-group-item.disabled {
+  opacity: .45;
+  pointer-events: none
+}
+
+.aura-list-group-flush {
+  border-radius: 0;
+  border-inline: 0
+}
+
+.aura-input-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%
+}
+
+.aura-input-group>.aura-input,
+.aura-input-group>.aura-select {
+  flex: 1 1 auto;
+  min-width: 0;
+  position: relative
+}
+
+.aura-input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  color: var(--aura-muted);
+  background: var(--aura-surface-2);
+  border: 1px solid var(--aura-border);
+  white-space: nowrap
+}
+
+.aura-input-group>:not(:first-child) {
+  margin-inline-start: -1px;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0
+}
+
+.aura-input-group>:not(:last-child) {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0
+}
+
+.aura-input-group>:first-child {
+  border-start-start-radius: var(--aura-radius-3);
+  border-end-start-radius: var(--aura-radius-3)
+}
+
+.aura-input-group>:last-child {
+  border-start-end-radius: var(--aura-radius-3);
+  border-end-end-radius: var(--aura-radius-3)
+}
+
+.aura-input-sm {
+  padding: .35rem .7rem;
+  font-size: var(--aura-fs-sm)
+}
+
+.aura-input-lg {
+  padding: .9rem 1.2rem;
+  font-size: var(--aura-fs-lg)
+}
+
+.aura-form-text {
+  display: block;
+  margin-top: .35rem;
+  font-size: var(--aura-fs-xs);
+  color: var(--aura-muted)
+}
+
+textarea.aura-input {
+  min-height: 6rem;
+  resize: vertical
+}
+
+/* Checkbox / Radio */
+.aura-check {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  cursor: pointer;
+  user-select: none
+}
+
+.aura-check input {
+  appearance: none;
+  flex: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 0;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  background: var(--aura-surface-2);
+  border: 1.5px solid var(--aura-border);
+  border-radius: var(--aura-radius-1);
+  transition: var(--aura-transition)
+}
+
+.aura-check input[type=radio] {
+  border-radius: 50%
+}
+
+.aura-check input::before {
+  content: "";
+  width: .65rem;
+  height: .65rem;
+  transform: scale(0);
+  transition: transform var(--aura-duration) var(--aura-ease-spring);
+  background: #fff;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0, 43% 62%)
+}
+
+.aura-check input[type=radio]::before {
+  clip-path: circle(50%)
+}
+
+.aura-check input:checked {
+  background: var(--aura-grad-cosmic);
+  border-color: transparent;
+  box-shadow: 0 0 14px rgba(var(--aura-cosmic-rgb), .55)
+}
+
+.aura-check input:checked::before {
+  transform: scale(1)
+}
+
+.aura-check input:focus-visible {
+  outline: 0;
+  box-shadow: var(--aura-focus-ring)
+}
+
+.aura-check input:disabled {
+  opacity: .4;
+  cursor: not-allowed
+}
+
+.aura-range {
+  appearance: none;
+  width: 100%;
+  height: .5rem;
+  border-radius: var(--aura-radius-pill);
+  background: var(--aura-surface-2);
+  outline: 0
+}
+
+.aura-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  background: var(--aura-grad-cosmic);
+  box-shadow: 0 0 0 4px rgba(var(--aura-cosmic-rgb), .25), 0 0 16px rgba(var(--aura-cosmic-rgb), .7);
+  transition: var(--aura-transition)
+}
+
+.aura-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2)
+}
+
+.aura-range::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  background: var(--aura-cosmic)
+}
+
+/* Validation */
+.aura-input.is-valid,
+.aura-select.is-valid {
+  border-color: var(--aura-success) !important;
+  box-shadow: 0 0 0 3px rgba(var(--aura-success-rgb), .2)
+}
+
+.aura-input.is-invalid,
+.aura-select.is-invalid {
+  border-color: var(--aura-danger) !important;
+  box-shadow: 0 0 0 3px rgba(var(--aura-danger-rgb), .2)
+}
+
+.aura-valid-feedback,
+.aura-invalid-feedback {
+  display: none;
+  margin-top: .35rem;
+  font-size: var(--aura-fs-xs)
+}
+
+.aura-valid-feedback {
+  color: var(--aura-success)
+}
+
+.aura-invalid-feedback {
+  color: var(--aura-danger)
+}
+
+.is-valid~.aura-valid-feedback,
+.is-invalid~.aura-invalid-feedback {
+  display: block
+}
+
+/* Timeline */
+.aura-timeline {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.75rem
+}
+
+.aura-timeline::before {
+  content: "";
+  position: absolute;
+  inset: .4rem auto .4rem .45rem;
+  width: 2px;
+  background: linear-gradient(var(--aura-cosmic), var(--aura-cyber), transparent)
+}
+
+.aura-timeline-item {
+  position: relative;
+  padding-bottom: var(--aura-space-5)
+}
+
+.aura-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.75rem;
+  top: .3rem;
+  width: .95rem;
+  height: .95rem;
+  border-radius: 50%;
+  background: var(--aura-bg);
+  border: 2px solid var(--aura-cosmic);
+  box-shadow: 0 0 14px rgba(var(--aura-cosmic-rgb), .7)
+}
+
+.aura-timeline-title {
+  font-weight: 700;
+  margin: 0
+}
+
+.aura-timeline-time {
+  font-size: var(--aura-fs-xs);
+  color: var(--aura-muted)
+}
+
+/* Chip · Kbd · Placeholder · Notification dot */
+.aura-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .25rem .75rem;
+  border-radius: var(--aura-radius-pill);
+  font-size: var(--aura-fs-sm);
+  background: var(--aura-surface-2);
+  border: 1px solid var(--aura-border)
+}
+
+.aura-kbd {
+  display: inline-block;
+  padding: .1rem .45rem;
+  font: 600 var(--aura-fs-xs) var(--aura-font-mono);
+  border-radius: var(--aura-radius-1);
+  background: var(--aura-surface-2);
+  border: 1px solid var(--aura-border);
+  border-bottom-width: 2px
+}
+
+.aura-dot {
+  display: inline-block;
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  background: var(--aura-success);
+  box-shadow: 0 0 0 0 rgba(var(--aura-success-rgb), .6);
+  animation: aura-kf-ping 1.8s infinite
+}
+
+.aura-placeholder {
+  display: inline-block;
+  min-height: 1em;
+  vertical-align: middle;
+  border-radius: var(--aura-radius-1);
+  background: linear-gradient(90deg, var(--aura-surface-2) 25%, var(--aura-surface) 50%, var(--aura-surface-2) 75%);
+  background-size: 200% 100%;
+  animation: aura-kf-shimmer 1.4s linear infinite
+}
+
+.aura-avatar-group {
+  display: flex
+}
+
+.aura-avatar-group>* {
+  margin-inline-start: -.6rem;
+  border: 2px solid var(--aura-bg)
+}
+
+.aura-avatar-group>:first-child {
+  margin-inline-start: 0
+}
+
+.aura-hr {
+  height: 1px;
+  border: 0;
+  margin: var(--aura-space-5) 0;
+  background: linear-gradient(90deg, transparent, var(--aura-border), transparent)
+}

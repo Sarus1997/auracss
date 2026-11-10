@@ -1,0 +1,170 @@
+<section id="components" style="margin: 6rem 0;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="aura-badge aura-badge-emerald">Complete UI Kit</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem;">คอมโพเนนต์ครบชุด พร้อมยกไปใช้งาน</h2>
+        <p class="aura-muted">ปรับแต่งง่ายผ่าน CSS Variables และคลาสสำเร็จรูป</p>
+      </div>
+
+      <!-- Row: Buttons & Inputs -->
+      <div class="aura-row">
+        <!-- Buttons & Badges -->
+        <div class="col-6">
+          <div class="aura-card" style="height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">🎨 ปุ่มและเฉดสี (Buttons & Ripple)</h3>
+            <p class="aura-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">คลิกเพื่อสัมผัสเอฟเฟกต์ Ripple
+              Effect เสมือนหยดน้ำกระจายตัว</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem;">
+              <button class="aura-btn aura-btn-cosmic">Cosmic</button>
+              <button class="aura-btn aura-btn-cyber">Cyber Blue</button>
+              <button class="aura-btn aura-btn-emerald">Emerald</button>
+              <button class="aura-btn aura-btn-sunset">Sunset Glow</button>
+              <button class="aura-btn aura-btn-outline">Outline</button>
+              <button class="aura-btn aura-btn-glass">Glass</button>
+            </div>
+
+            <h4 style="margin-bottom: 0.75rem;">🏷️ ป้ายกำกับสถานะ (Badges)</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="aura-badge aura-badge-cosmic">Cosmic Tag</span>
+              <span class="aura-badge aura-badge-cyber">Cyber Tag</span>
+              <span class="aura-badge aura-badge-emerald">Active</span>
+              <span class="aura-badge aura-badge-sunset">Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms & Controls -->
+        <div class="col-6">
+          <div class="aura-card" style="height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">📝 ฟอร์มและอินพุตเรืองแสง (Forms)</h3>
+            <p class="aura-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">โฟกัสแล้วมีแสง Glow นุ่มนวล
+              สบายสายตา</p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <label class="aura-label" for="demo-email">อีเมลผู้ใช้งาน</label>
+                <input class="aura-input" id="demo-email" type="email" placeholder="dev@auracss.com">
+              </div>
+
+              <div>
+                <label class="aura-label" for="demo-plan">เลือกแผนที่ต้องการ</label>
+                <select class="aura-select" id="demo-plan">
+                  <option>Pro Developer (ยอดนิยม)</option>
+                  <option>Starter Free</option>
+                  <option>Enterprise Architecture</option>
+                </select>
+              </div>
+
+              <label class="aura-switch">
+                <input type="checkbox" role="switch" checked>
+                <span class="aura-switch-track" aria-hidden="true"></span>
+                เปิดรับการแจ้งเตือน
+              </label>
+
+              <div class="aura-tabs" data-aura-tabs>
+                <button class="aura-tab" id="tab-utilities-button" type="button" data-aura-tab
+                  data-aura-target="#tab-utilities" aria-selected="true">Utilities</button>
+                <button class="aura-tab" id="tab-components-button" type="button" data-aura-tab
+                  data-aura-target="#tab-components" aria-selected="false">Components</button>
+              </div>
+                <div class="aura-tab-panel" id="tab-utilities" aria-labelledby="tab-utilities-button">
+                  <code class="aura-font-mono">aura-d-flex · aura-gap-4 · aura-p-4</code>
+                </div>
+                <div class="aura-tab-panel" id="tab-components" aria-labelledby="tab-components-button" hidden>
+                  <span class="aura-badge aura-badge-emerald">Responsive</span>
+                  <span class="aura-badge aura-badge-cyber">Accessible</span>
+                </div>
+              </div>
+
+              <div class="aura-dropdown">
+                <button class="aura-btn aura-btn-glass aura-btn-sm" type="button" data-aura-toggle="dropdown">
+                  ตัวเลือกเพิ่มเติม ▾
+                </button>
+                <div class="aura-dropdown-menu">
+                  <a class="aura-dropdown-item" href="#faq">อ่านคำถามที่พบบ่อย</a>
+                  <button class="aura-dropdown-item" type="button"
+                    onclick="Aura.toast({ title: 'AuraCSS', message: 'เมนูแบบโต้ตอบพร้อมใช้งาน', type: 'success' })">
+                    ทดสอบแจ้งเตือน
+                  </button>
+                </div>
+              </div>
+
+              <!-- Spinners & Skeleton Preview -->
+              <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
+                <span class="aura-spinner"></span>
+                <span class="aura-muted" style="font-size: 0.9rem;">กำลังประมวลผลข้อมูล Real-time...</span>
+              </div>
+              <div class="aura-skeleton" style="margin-top: 0.5rem; width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Glass Table & Alerts -->
+      <div class="aura-row" style="margin-top: 2rem;">
+        <div class="col-8">
+          <div class="aura-card" style="height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">📑 ตารางข้อมูลสไตล์กระจกฝ้า (Glass Table)</h3>
+            <p class="aura-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">จัดข้อมูลให้สวยงาม อ่านง่าย
+              และเป็นระเบียบ</p>
+
+            <div class="aura-table-responsive">
+              <table class="aura-table aura-table-hover" style="text-align: left;">
+                <thead>
+                  <tr
+                    style="border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--aura-muted); font-size: 0.9rem;">
+                    <th style="padding: 0.75rem 1rem;">สมาชิก</th>
+                    <th style="padding: 0.75rem 1rem;">ตำแหน่ง</th>
+                    <th style="padding: 0.75rem 1rem;">สถานะ</th>
+                    <th style="padding: 0.75rem 1rem;">จัดการ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                      <div class="aura-avatar">A</div>
+                      <div>
+                        <strong>Alex Turner</strong>
+                        <div class="aura-muted" style="font-size: 0.75rem;">alex@auracss.com</div>
+                      </div>
+                    </td>
+                    <td style="padding: 1rem;">Frontend Lead</td>
+                    <td style="padding: 1rem;"><span class="aura-badge aura-badge-emerald">Active</span></td>
+                    <td style="padding: 1rem;"><button class="aura-btn aura-btn-glass aura-btn-sm">แก้ไข</button></td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                      <div class="aura-avatar" style="background: var(--grad-cyber);">S</div>
+                      <div>
+                        <strong>Sarah Connor</strong>
+                        <div class="aura-muted" style="font-size: 0.75rem;">sarah@cyber.io</div>
+                      </div>
+                    </td>
+                    <td style="padding: 1rem;">UI/UX Specialist</td>
+                    <td style="padding: 1rem;"><span class="aura-badge aura-badge-cyber">Syncing</span></td>
+                    <td style="padding: 1rem;"><button class="aura-btn aura-btn-glass aura-btn-sm">แก้ไข</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback & Alerts -->
+        <div class="col-4">
+          <div class="aura-card" style="display: flex; flex-direction: column; gap: 1rem; height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">🔔 กล่องแจ้งเตือน (Alerts)</h3>
+            <div class="aura-alert aura-alert-success aura-alert-dismissible">
+              <span>✓ ประมวลผล CSS สำเร็จเรียบร้อย</span>
+              <button class="aura-alert-close" type="button" data-aura-dismiss="alert" aria-label="ปิดการแจ้งเตือน">×</button>
+            </div>
+            <div class="aura-alert aura-alert-warning">
+              ⚠ มีการอัปเดตเวอร์ชันใหม่ 3.2.0
+            </div>
+            <div class="aura-alert aura-alert-danger">
+              ✕ เกิดข้อผิดพลาดในการเชื่อมต่อ API
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

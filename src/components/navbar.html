@@ -1,0 +1,42 @@
+<nav class="aura-navbar" aria-label="เมนูหลัก">
+  <a href="#" class="aura-nav-brand" aria-label="AuraCSS home">
+    <img
+      class="aura-brand-logo"
+      src="public/images/logo/aura_css_logo_animated.svg"
+      alt=""
+    />
+    <span>AURA<span class="aura-text-gradient">CSS</span></span>
+    <span class="aura-badge aura-badge-cyber nav-version">v3.2.0</span>
+  </a>
+  <ul class="aura-nav-menu" id="primary-navigation">
+    <li><a href="#features">ฟีเจอร์</a></li>
+    <li><a href="#bento">Bento</a></li>
+    <li><a href="#system">ระบบ Grid</a></li>
+    <li><a href="#kit">คอมโพเนนต์</a></li>
+    <li>
+      <button
+        class="aura-btn aura-btn-glass aura-btn-sm aura-btn-pill"
+        type="button"
+        onclick="Aura.toggleTheme()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20.2 15.4A8.3 8.3 0 0 1 8.6 3.8 8.4 8.4 0 1 0 20.2 15.4Z"
+          />
+        </svg>
+        สลับธีม
+      </button>
+    </li>
+  </ul>
+  <button
+    class="aura-burger"
+    type="button"
+    aria-label="เปิดหรือปิดเมนูนำทาง"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  </button>
+</nav>

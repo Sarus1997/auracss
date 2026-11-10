@@ -1,0 +1,171 @@
+/* --- CARDS, SPOTLIGHT, BORDER BEAM & EFFECTS --- */
+.aura-card {
+  background: var(--aura-surface);
+  backdrop-filter: var(--aura-blur);
+  -webkit-backdrop-filter: var(--aura-blur);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius);
+  padding: 1.75rem;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out, border-color 0.25s, box-shadow 0.25s;
+}
+
+.aura-card-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aura-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: var(--aura-shadow);
+}
+
+.aura-card-glow {
+  box-shadow: 0 0 0 1px var(--aura-border), 0 12px 40px var(--aura-cosmic-glow);
+}
+
+.aura-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Spotlight Card */
+.aura-card-spotlight {
+  position: relative;
+  background: var(--aura-surface);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius);
+  padding: 2rem;
+  overflow: hidden;
+  backdrop-filter: var(--aura-blur);
+}
+
+.aura-card-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(99, 102, 241, 0.25), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.aura-card-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Border Beam */
+.aura-border-beam {
+  position: relative;
+  border-radius: var(--aura-radius);
+  padding: 1px;
+  overflow: hidden;
+  background: var(--aura-border);
+  display: inline-block;
+  width: 100%;
+}
+
+.aura-border-beam::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, transparent, var(--aura-cyber), var(--aura-cosmic), transparent);
+  animation: aura-spin 4s linear infinite;
+}
+
+.aura-border-beam>.aura-border-inner {
+  position: relative;
+  background: var(--aura-bg);
+  border-radius: calc(var(--aura-radius) - 1px);
+  padding: 2rem;
+  z-index: 1;
+}
+
+.aura-gradient-border {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--aura-bg), var(--aura-bg)) padding-box,
+    var(--grad-aurora) border-box;
+  border-radius: var(--aura-radius);
+}
+
+.aura-gradient-border-animated {
+  background-size: 100% 100%, 250% 250%;
+  animation: aura-gradient-shift 6s ease infinite;
+}
+
+.aura-hover-glow {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.aura-hover-glow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px var(--aura-cosmic-glow);
+}
+
+.aura-glow {
+  box-shadow: 0 0 24px var(--aura-cosmic-glow);
+}
+
+.aura-float {
+  animation: aura-float 4s ease-in-out infinite;
+}
+
+/* Text Shine Animation */
+.aura-text-shine {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 0%, #ffffff 50%, rgba(255, 255, 255, 0.3) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aura-shine 3s linear infinite;
+  display: inline-block;
+}
+
+@keyframes aura-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aura-gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0 0, 0% 50%;
+  }
+
+  50% {
+    background-position: 0 0, 100% 50%;
+  }
+}
+
+@keyframes aura-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes aura-shine {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}

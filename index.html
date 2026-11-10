@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="th" data-aura-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuraCSS — Ambient UI Framework</title>
+    <meta
+      name="description"
+      content="เฟรมเวิร์ก CSS ที่ให้แสง กระจกฝ้า และการเคลื่อนไหวมาพร้อมกริดและยูทิลิตี้ครบแบบ Bootstrap"
+    />
+    <link rel="icon" type="image/svg+xml" href="public/images/logo/aura_css_logo.svg" />
+    <link rel="stylesheet" href="dist/aura.css" />
+    <link rel="stylesheet" href="src/pages/showcase.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="showcase-page aura-bg-grid">
+    <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหาหลัก</a>
+    <nav class="aura-navbar" aria-label="เมนูหลัก">
+  <a href="#" class="aura-nav-brand" aria-label="AuraCSS home">
+    <img
+      class="aura-brand-logo"
+      src="public/images/logo/aura_css_logo_animated.svg"
+      alt=""
+    />
+    <span>AURA<span class="aura-text-gradient">CSS</span></span>
+    <span class="aura-badge aura-badge-cyber nav-version">v3.2.0</span>
+  </a>
+  <ul class="aura-nav-menu" id="primary-navigation">
+    <li><a href="#features">ฟีเจอร์</a></li>
+    <li><a href="#bento">Bento</a></li>
+    <li><a href="#system">ระบบ Grid</a></li>
+    <li><a href="#kit">คอมโพเนนต์</a></li>
+    <li>
+      <button
+        class="aura-btn aura-btn-glass aura-btn-sm aura-btn-pill"
+        type="button"
+        onclick="Aura.toggleTheme()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20.2 15.4A8.3 8.3 0 0 1 8.6 3.8 8.4 8.4 0 1 0 20.2 15.4Z"
+          />
+        </svg>
+        สลับธีม
+      </button>
+    </li>
+  </ul>
+  <button
+    class="aura-burger"
+    type="button"
+    aria-label="เปิดหรือปิดเมนูนำทาง"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  </button>
+</nav>
+
+    <main id="main-content">
+      <header class="hero-section">
+  <div class="aura-container hero-layout">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        เว็บที่มี<br />
+        <span>แสงและมิติ</span><br />ในตัว
+      </h1>
+      <p class="aura-muted hero-description">
+        กริด 12 คอลัมน์และยูทิลิตี้ครบแบบ Bootstrap พร้อมสปอตไลท์ ลำแสงหมุนวน
+        กระจกฝ้า และแอนิเมชันที่ใส่ได้ด้วยคลาสเดียว
+      </p>
+      <div class="hero-actions">
+        <a
+          href="#system"
+          class="aura-btn aura-btn-cosmic aura-btn-lg aura-btn-pill"
+        >
+          เริ่มใช้งาน
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" />
+          </svg>
+        </a>
+        <button
+          class="aura-btn aura-btn-glass aura-btn-lg aura-btn-pill"
+          type="button"
+          onclick="
+            Aura.toast({
+              title: 'AuraCSS',
+              message: 'พร้อมใช้งานแล้ว ลองสลับธีมดูได้เลย',
+              type: 'success',
+            })
+          "
+        >
+          ลองแจ้งเตือน
+        </button>
+      </div>
+      <div class="hero-proof">
+        <span class="hero-proof-dot" aria-hidden="true"></span>
+        Pure CSS <span aria-hidden="true">·</span> Vanilla JS
+        <span aria-hidden="true">·</span> ไม่มี dependency
+      </div>
+    </div>
+
+    <div class="hero-stage" data-aura-pointer-shift aria-hidden="true">
+      <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+      <div class="hero-window aura-glass-strong">
+        <div class="hero-window-bar">
+          <div class="hero-window-lights" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="hero-window-title">AURA / PLAYGROUND</span>
+          <span class="hero-window-status">
+            <span aria-hidden="true"></span> PREVIEW
+          </span>
+        </div>
+        <div class="hero-window-body">
+          <div class="hero-preview-label">
+            AMBIENT LIGHTING <span>01 — 03</span>
+          </div>
+          <div class="hero-preview">
+            <div class="hero-preview-glow" aria-hidden="true"></div>
+            <div class="hero-preview-content">
+              <span class="hero-preview-chip">AURA / EFFECTS</span>
+              <h2>Light that<br /><span>feels alive.</span></h2>
+              <p>Move your cursor.<br />Let the interface respond.</p>
+              <div class="hero-preview-action">
+                <span>Explore effects</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-6-6 6 6-6 6" />
+                </svg>
+              </div>
+            </div>
+            <div class="hero-preview-orb" aria-hidden="true"></div>
+            <div class="hero-preview-ring" aria-hidden="true"></div>
+          </div>
+          <div class="hero-window-footer">
+            <div>
+              <span class="hero-footer-label">CURRENT THEME</span>
+              <strong><span aria-hidden="true"></span> Cosmic Aurora</strong>
+            </div>
+            <div class="hero-swatches" aria-label="สีตัวอย่าง">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-float-tag hero-float-tag-top">
+        <span class="hero-float-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2Z"
+            />
+          </svg>
+        </span>
+        <span
+          ><strong>One class.</strong><small>Infinite atmosphere.</small></span
+        >
+      </div>
+      <div class="hero-float-tag hero-float-tag-bottom">
+        <span class="hero-float-pulse" aria-hidden="true"></span>
+        <span
+          ><strong>12-column grid</strong
+          ><small>Responsive by design</small></span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <span></span>
+    SCROLL TO EXPLORE
+  </div>
+</header>
+
+      <!-- MARQUEE -->
+      <section
+        class="aura-py-5 aura-border-top aura-border-bottom"
+        aria-label="ฟีเจอร์เด่น"
+      >
+        <div class="aura-marquee">
+          <div class="aura-marquee-track">
+            <span class="aura-chip feature-chip">⚡ Grid 12 คอลัมน์</span
+            ><span class="aura-chip feature-chip">🎛 Utility นับพัน</span>
+            <span class="aura-chip feature-chip">🔦 Spotlight</span
+            ><span class="aura-chip feature-chip">🌀 Border Beam</span>
+            <span class="aura-chip feature-chip">🪟 Glassmorphism</span
+            ><span class="aura-chip feature-chip">🌌 Aurora</span>
+            <span class="aura-chip feature-chip">♿ เข้าถึงได้</span
+            ><span class="aura-chip feature-chip"
+              >🌓 Dark / Light / System</span
+            >
+            <span class="aura-chip feature-chip" aria-hidden="true"
+              >⚡ Grid 12 คอลัมน์</span
+            ><span class="aura-chip feature-chip" aria-hidden="true"
+              >🎛 Utility นับพัน</span
+            >
+            <span class="aura-chip feature-chip" aria-hidden="true"
+              >🔦 Spotlight</span
+            ><span class="aura-chip feature-chip" aria-hidden="true"
+              >🌀 Border Beam</span
+            >
+            <span class="aura-chip feature-chip" aria-hidden="true"
+              >🪟 Glassmorphism</span
+            ><span class="aura-chip feature-chip" aria-hidden="true"
+              >🌌 Aurora</span
+            >
+            <span class="aura-chip feature-chip" aria-hidden="true"
+              >♿ เข้าถึงได้</span
+            ><span class="aura-chip feature-chip" aria-hidden="true"
+              >🌓 Dark / Light / System</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="aura-container">
+
+      <div class="aura-container">
+        <!-- STATS -->
+        <section id="features" class="aura-my-8">
+          <div class="aura-row aura-g-4">
+            <div class="col-6 col-lg-3">
+              <div class="aura-card aura-text-center" data-aura-tilt>
+                <div class="big-num aura-text-aurora" data-aura-counter="1400">
+                  0
+                </div>
+                <div class="aura-muted aura-fs-sm">คลาสยูทิลิตี้</div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="aura-card aura-text-center" data-aura-tilt>
+                <div class="big-num aura-text-cyber" data-aura-counter="12">
+                  0
+                </div>
+                <div class="aura-muted aura-fs-sm">คอลัมน์ต่อแถว</div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="aura-card aura-text-center" data-aura-tilt>
+                <div class="big-num aura-text-emerald" data-aura-counter="6">
+                  0
+                </div>
+                <div class="aura-muted aura-fs-sm">breakpoint</div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="aura-card aura-text-center" data-aura-tilt>
+                <div class="big-num aura-text-sunset" data-aura-counter="0">
+                  0
+                </div>
+                <div class="aura-muted aura-fs-sm">dependency</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BENTO -->
+        <section id="bento" class="aura-my-8">
+          <div class="aura-text-center aura-mb-7">
+            <span class="aura-badge aura-badge-cyber">Bento Showcase</span>
+            <h2 class="section-title aura-mt-3">แสงตอบสนองทุกการขยับ</h2>
+            <p class="aura-muted">เลื่อนเมาส์ผ่านการ์ดเพื่อดูแสงและมิติ</p>
+          </div>
+          <div class="aura-row aura-g-4">
+            <div class="col-12 col-lg-8">
+              <div
+                class="aura-card-spotlight aura-h-100"
+                style="
+                  min-height: 300px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                "
+              >
+                <div>
+                  <span class="aura-badge aura-badge-emerald"
+                    >Interactive Light</span
+                  >
+                  <h3 class="aura-fs-3xl aura-mt-4 aura-mb-2">
+                    🔦 Radial Spotlight
+                  </h3>
+                  <p
+                    class="aura-muted"
+                    style="max-width: 520px; line-height: 1.7"
+                  >
+                    แสงไล่ตามพิกัดเมาส์จริงบนการ์ด
+                    ใช้ได้ด้วยคลาสเดียวและไม่ต้องใช้ไลบรารีเสริม
+                  </p>
+                </div>
+                <div class="aura-d-flex aura-gap-2 aura-flex-wrap">
+                  <span class="aura-badge aura-badge-outline"
+                    >GPU-friendly</span
+                  >
+                  <span class="aura-badge aura-badge-outline"
+                    >Pointer Events</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4">
+              <div
+                class="aura-card aura-h-100 aura-text-center aura-place-center"
+                data-aura-tilt
+                style="min-height: 300px"
+              >
+                <div>
+                  <div class="aura-animate-float" style="font-size: 3.8rem">
+                    🔮
+                  </div>
+                  <h3 class="aura-mt-3 aura-mb-2">3D Gyro Tilt</h3>
+                  <p class="aura-muted aura-fs-sm">
+                    เอียงตามเมาส์ เหมือนถือการ์ดจริง
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="aura-border-beam">
+                <div
+                  class="aura-border-inner aura-d-flex aura-justify-content-between aura-align-items-center aura-flex-wrap aura-gap-5"
+                >
+                  <div>
+                    <span class="aura-badge aura-badge-cosmic"
+                      >Conic Gradient</span
+                    >
+                    <h3 class="aura-fs-2xl aura-mt-3 aura-mb-1">
+                      🌀 Infinite Border Beam
+                    </h3>
+                    <p class="aura-muted aura-mb-0">
+                      ลำแสงวิ่งรอบกรอบ 360° ต่อเนื่อง
+                    </p>
+                  </div>
+                  <button
+                    class="aura-btn aura-btn-cosmic"
+                    type="button"
+                    data-aura-toggle="offcanvas"
+                    data-aura-target="#panel-theme"
+                  >
+                    เปิด Offcanvas 🪟
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div
+                class="aura-glass aura-p-5 aura-rounded-4 aura-hover-lift aura-h-100"
+              >
+                <div class="aura-fs-3xl">🪟</div>
+                <h4 class="aura-mt-3 aura-mb-1">Glass</h4>
+                <p class="aura-muted aura-fs-sm aura-mb-0">
+                  <code>aura-glass</code> และ
+                  <code>aura-blur-*</code> ให้กระจกฝ้าหลายระดับ
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div
+                class="aura-glass aura-p-5 aura-rounded-4 aura-hover-glow aura-h-100"
+              >
+                <div class="aura-fs-3xl">💡</div>
+                <h4 class="aura-mt-3 aura-mb-1">Glow</h4>
+                <p class="aura-muted aura-fs-sm aura-mb-0">
+                  <code>aura-glow-*</code> เรืองแสงรอบกล่อง
+                  ชี้เมาส์แล้วสว่างขึ้น
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div
+                class="aura-glass aura-p-5 aura-rounded-4 aura-hover-lift aura-h-100"
+              >
+                <div class="aura-fs-3xl">🎬</div>
+                <h4 class="aura-mt-3 aura-mb-1">Motion</h4>
+                <p class="aura-muted aura-fs-sm aura-mb-0">
+                  <code>aura-animate-*</code> พร้อม
+                  <code>aura-delay-*</code> และเคารพโหมดลดการเคลื่อนไหว
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GRID SYSTEM -->
+        <section id="system" class="aura-my-8">
+          <div class="aura-text-center aura-mb-7">
+            <span class="aura-badge aura-badge-emerald"
+              >Bootstrap-style System</span
+            >
+            <h2 class="section-title aura-mt-3">กริดและยูทิลิตี้ ครบมือ</h2>
+            <p class="aura-muted">
+              ย่อหน้าต่างให้เห็นการเรียงตัวใหม่ตาม breakpoint
+            </p>
+          </div>
+
+          <div class="aura-row aura-g-5 aura-align-items-start">
+            <div class="col-12 col-lg-6">
+              <div class="aura-card">
+                <h3 class="aura-fs-xl aura-mb-4">
+                  Live Grid: <code>col-12 col-md-6 col-xl-3</code>
+                </h3>
+                <div class="aura-row aura-g-2">
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">1</div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">2</div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">3</div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">4</div>
+                  </div>
+                </div>
+                <div class="aura-hr"></div>
+                <p class="aura-muted aura-fs-sm aura-mb-0">
+                  <span class="aura-d-md-none"
+                    >กำลังแสดง: มือถือ (1 คอลัมน์)</span
+                  >
+                  <span class="aura-d-none aura-d-md-inline aura-d-xl-none"
+                    >กำลังแสดง: แท็บเล็ต (2 คอลัมน์)</span
+                  >
+                  <span class="aura-d-none aura-d-xl-inline"
+                    >กำลังแสดง: เดสก์ท็อป (4 คอลัมน์)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="aura-tabs" data-aura-tabs>
+                <button
+                  class="aura-tab"
+                  type="button"
+                  data-aura-tab
+                  data-aura-target="#t-grid"
+                  aria-selected="true"
+                >
+                  Grid
+                </button>
+                <button
+                  class="aura-tab"
+                  type="button"
+                  data-aura-tab
+                  data-aura-target="#t-util"
+                  aria-selected="false"
+                >
+                  Utilities
+                </button>
+                <button
+                  class="aura-tab"
+                  type="button"
+                  data-aura-tab
+                  data-aura-target="#t-fx"
+                  aria-selected="false"
+                >
+                  Effects
+                </button>
+              </div>
+              <div class="aura-tab-panel" id="t-grid">
+                <pre
+                  class="code-pane aura-glass"
+                ><span class="tok-c">.aura-container</span>  <span class="tok-d">/* --aura-container */</span>
+<span class="tok-c">.aura-row</span> <span class="tok-m">.aura-g-4</span>
+<span class="tok-c">.col-md-6</span> <span class="tok-m">.offset-lg-2</span>
+<span class="tok-c">.aura-order-md-first</span>
+<span class="tok-c">.aura-row-cols-lg-3</span></pre>
+              </div>
+              <div class="aura-tab-panel" id="t-util" hidden>
+                <pre
+                  class="code-pane aura-glass"
+                ><span class="tok-c">aura-d-md-flex</span> <span class="tok-c">aura-justify-content-between</span>
+<span class="tok-m">aura-p-4</span> <span class="tok-m">aura-mx-auto</span> <span class="tok-m">aura-gap-5</span>
+<span class="tok-e">aura-text-cyber</span> <span class="tok-e">aura-bg-grad-sunset</span>
+<span class="tok-c">aura-rounded-pill</span> <span class="tok-c">aura-shadow-lg</span>
+<span class="tok-m">aura-position-absolute aura-top-0</span></pre>
+              </div>
+              <div class="aura-tab-panel" id="t-fx" hidden>
+                <pre
+                  class="code-pane aura-glass"
+                ><span class="tok-e">aura-aurora</span> <span class="tok-e">aura-gradient-border</span>
+<span class="tok-c">aura-text-aurora</span> <span class="tok-c">aura-text-glow</span>
+<span class="tok-m">aura-hover-lift</span> <span class="tok-m">aura-hover-glow</span>
+<span class="tok-e">aura-animate-up aura-delay-2</span>
+<span class="tok-c">aura-marquee</span></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="components" style="margin: 6rem 0;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="aura-badge aura-badge-emerald">Complete UI Kit</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem;">คอมโพเนนต์ครบชุด พร้อมยกไปใช้งาน</h2>
+        <p class="aura-muted">ปรับแต่งง่ายผ่าน CSS Variables และคลาสสำเร็จรูป</p>
+      </div>
+
+      <!-- Row: Buttons & Inputs -->
+      <div class="aura-row">
+        <!-- Buttons & Badges -->
+        <div class="col-6">
+          <div class="aura-card" style="height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">🎨 ปุ่มและเฉดสี (Buttons & Ripple)</h3>
+            <p class="aura-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">คลิกเพื่อสัมผัสเอฟเฟกต์ Ripple
+              Effect เสมือนหยดน้ำกระจายตัว</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem;">
+              <button class="aura-btn aura-btn-cosmic">Cosmic</button>
+              <button class="aura-btn aura-btn-cyber">Cyber Blue</button>
+              <button class="aura-btn aura-btn-emerald">Emerald</button>
+              <button class="aura-btn aura-btn-sunset">Sunset Glow</button>
+              <button class="aura-btn aura-btn-outline">Outline</button>
+              <button class="aura-btn aura-btn-glass">Glass</button>
+            </div>
+
+            <h4 style="margin-bottom: 0.75rem;">🏷️ ป้ายกำกับสถานะ (Badges)</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="aura-badge aura-badge-cosmic">Cosmic Tag</span>
+              <span class="aura-badge aura-badge-cyber">Cyber Tag</span>
+              <span class="aura-badge aura-badge-emerald">Active</span>
+              <span class="aura-badge aura-badge-sunset">Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms & Controls -->
+        <div class="col-6">
+          <div class="aura-card" style="height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">📝 ฟอร์มและอินพุตเรืองแสง (Forms)</h3>
+            <p class="aura-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">โฟกัสแล้วมีแสง Glow นุ่มนวล
+              สบายสายตา</p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <label class="aura-label" for="demo-email">อีเมลผู้ใช้งาน</label>
+                <input class="aura-input" id="demo-email" type="email" placeholder="dev@auracss.com">
+              </div>
+
+              <div>
+                <label class="aura-label" for="demo-plan">เลือกแผนที่ต้องการ</label>
+                <select class="aura-select" id="demo-plan">
+                  <option>Pro Developer (ยอดนิยม)</option>
+                  <option>Starter Free</option>
+                  <option>Enterprise Architecture</option>
+                </select>
+              </div>
+
+              <label class="aura-switch">
+                <input type="checkbox" role="switch" checked>
+                <span class="aura-switch-track" aria-hidden="true"></span>
+                เปิดรับการแจ้งเตือน
+              </label>
+
+              <div class="aura-tabs" data-aura-tabs>
+                <button class="aura-tab" id="tab-utilities-button" type="button" data-aura-tab
+                  data-aura-target="#tab-utilities" aria-selected="true">Utilities</button>
+                <button class="aura-tab" id="tab-components-button" type="button" data-aura-tab
+                  data-aura-target="#tab-components" aria-selected="false">Components</button>
+              </div>
+                <div class="aura-tab-panel" id="tab-utilities" aria-labelledby="tab-utilities-button">
+                  <code class="aura-font-mono">aura-d-flex · aura-gap-4 · aura-p-4</code>
+                </div>
+                <div class="aura-tab-panel" id="tab-components" aria-labelledby="tab-components-button" hidden>
+                  <span class="aura-badge aura-badge-emerald">Responsive</span>
+                  <span class="aura-badge aura-badge-cyber">Accessible</span>
+                </div>
+              </div>
+
+              <div class="aura-dropdown">
+                <button class="aura-btn aura-btn-glass aura-btn-sm" type="button" data-aura-toggle="dropdown">
+                  ตัวเลือกเพิ่มเติม ▾
+                </button>
+                <div class="aura-dropdown-menu">
+                  <a class="aura-dropdown-item" href="#faq">อ่านคำถามที่พบบ่อย</a>
+                  <button class="aura-dropdown-item" type="button"
+                    onclick="Aura.toast({ title: 'AuraCSS', message: 'เมนูแบบโต้ตอบพร้อมใช้งาน', type: 'success' })">
+                    ทดสอบแจ้งเตือน
+                  </button>
+                </div>
+              </div>
+
+              <!-- Spinners & Skeleton Preview -->
+              <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;">
+                <span class="aura-spinner"></span>
+                <span class="aura-muted" style="font-size: 0.9rem;">กำลังประมวลผลข้อมูล Real-time...</span>
+              </div>
+              <div class="aura-skeleton" style="margin-top: 0.5rem; width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Glass Table & Alerts -->
+      <div class="aura-row" style="margin-top: 2rem;">
+        <div class="col-8">
+          <div class="aura-card" style="height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">📑 ตารางข้อมูลสไตล์กระจกฝ้า (Glass Table)</h3>
+            <p class="aura-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">จัดข้อมูลให้สวยงาม อ่านง่าย
+              และเป็นระเบียบ</p>
+
+            <div class="aura-table-responsive">
+              <table class="aura-table aura-table-hover" style="text-align: left;">
+                <thead>
+                  <tr
+                    style="border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--aura-muted); font-size: 0.9rem;">
+                    <th style="padding: 0.75rem 1rem;">สมาชิก</th>
+                    <th style="padding: 0.75rem 1rem;">ตำแหน่ง</th>
+                    <th style="padding: 0.75rem 1rem;">สถานะ</th>
+                    <th style="padding: 0.75rem 1rem;">จัดการ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                      <div class="aura-avatar">A</div>
+                      <div>
+                        <strong>Alex Turner</strong>
+                        <div class="aura-muted" style="font-size: 0.75rem;">alex@auracss.com</div>
+                      </div>
+                    </td>
+                    <td style="padding: 1rem;">Frontend Lead</td>
+                    <td style="padding: 1rem;"><span class="aura-badge aura-badge-emerald">Active</span></td>
+                    <td style="padding: 1rem;"><button class="aura-btn aura-btn-glass aura-btn-sm">แก้ไข</button></td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                      <div class="aura-avatar" style="background: var(--grad-cyber);">S</div>
+                      <div>
+                        <strong>Sarah Connor</strong>
+                        <div class="aura-muted" style="font-size: 0.75rem;">sarah@cyber.io</div>
+                      </div>
+                    </td>
+                    <td style="padding: 1rem;">UI/UX Specialist</td>
+                    <td style="padding: 1rem;"><span class="aura-badge aura-badge-cyber">Syncing</span></td>
+                    <td style="padding: 1rem;"><button class="aura-btn aura-btn-glass aura-btn-sm">แก้ไข</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback & Alerts -->
+        <div class="col-4">
+          <div class="aura-card" style="display: flex; flex-direction: column; gap: 1rem; height: 100%;">
+            <h3 style="margin-bottom: 0.5rem;">🔔 กล่องแจ้งเตือน (Alerts)</h3>
+            <div class="aura-alert aura-alert-success aura-alert-dismissible">
+              <span>✓ ประมวลผล CSS สำเร็จเรียบร้อย</span>
+              <button class="aura-alert-close" type="button" data-aura-dismiss="alert" aria-label="ปิดการแจ้งเตือน">×</button>
+            </div>
+            <div class="aura-alert aura-alert-warning">
+              ⚠ มีการอัปเดตเวอร์ชันใหม่ 3.2.0
+            </div>
+            <div class="aura-alert aura-alert-danger">
+              ✕ เกิดข้อผิดพลาดในการเชื่อมต่อ API
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- COMPONENT KIT -->
+        <section id="kit" class="aura-my-8">
+          <div class="aura-text-center aura-mb-7">
+            <span class="aura-badge aura-badge-sunset">UI Kit</span>
+            <h2 class="section-title aura-mt-3">คอมโพเนนต์ใหม่ในชุด</h2>
+          </div>
+          <div class="aura-row aura-g-4">
+            <div class="col-12 col-lg-7">
+              <div class="aura-card aura-h-100">
+                <h3 class="aura-fs-xl aura-mb-5">Stepper และ Pagination</h3>
+                <ol class="aura-stepper aura-mb-6">
+                  <li class="aura-step done">สมัคร</li>
+                  <li class="aura-step done">ติดตั้ง</li>
+                  <li class="aura-step active">ปรับแต่ง</li>
+                  <li class="aura-step">เปิดตัว</li>
+                </ol>
+                <ul class="aura-pagination">
+                  <li class="aura-page-item">
+                    <a class="aura-page-link" href="#kit" aria-label="ก่อนหน้า"
+                      >‹</a
+                    >
+                  </li>
+                  <li class="aura-page-item active">
+                    <a class="aura-page-link" href="#kit" aria-current="page"
+                      >1</a
+                    >
+                  </li>
+                  <li class="aura-page-item">
+                    <a class="aura-page-link" href="#kit">2</a>
+                  </li>
+                  <li class="aura-page-item">
+                    <a class="aura-page-link" href="#kit">3</a>
+                  </li>
+                  <li class="aura-page-item">
+                    <a class="aura-page-link" href="#kit" aria-label="ถัดไป"
+                      >›</a
+                    >
+                  </li>
+                </ul>
+                <div class="aura-hr"></div>
+                <div class="aura-input-group">
+                  <span class="aura-input-group-text">@</span>
+                  <input
+                    class="aura-input"
+                    placeholder="ชื่อผู้ใช้"
+                    aria-label="ชื่อผู้ใช้"
+                  />
+                  <button class="aura-btn aura-btn-cosmic" type="button">
+                    ตรวจสอบ
+                  </button>
+                </div>
+                <div class="aura-d-flex aura-gap-5 aura-mt-5 aura-flex-wrap">
+                  <label class="aura-check"
+                    ><input type="checkbox" checked /> รับข่าวสาร</label
+                  >
+                  <label class="aura-check"
+                    ><input type="radio" name="p" checked /> รายเดือน</label
+                  >
+                  <label class="aura-check"
+                    ><input type="radio" name="p" /> รายปี</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="aura-card aura-h-100">
+                <h3 class="aura-fs-xl aura-mb-5">Timeline</h3>
+                <ul class="aura-timeline">
+                  <li class="aura-timeline-item">
+                    <p class="aura-timeline-title">v3.0 Ambient Core</p>
+                    <span class="aura-timeline-time">Spotlight, Beam</span>
+                  </li>
+                  <li class="aura-timeline-item">
+                    <p class="aura-timeline-title">v3.1 Interactive</p>
+                    <span class="aura-timeline-time"
+                      >Modal, Tabs, Dropdown</span
+                    >
+                  </li>
+                  <li class="aura-timeline-item">
+                    <p class="aura-timeline-title">v3.2 Bootstrap-parity</p>
+                    <span class="aura-timeline-time"
+                      >Grid, Utilities, Offcanvas</span
+                    >
+                  </li>
+                </ul>
+                <div class="aura-progress aura-mt-4">
+                  <div class="aura-progress-bar" style="width: 82%"></div>
+                </div>
+                <div class="aura-d-flex aura-gap-3 aura-mt-5 aura-flex-wrap">
+                  <button
+                    class="aura-btn aura-btn-glass aura-btn-sm"
+                    type="button"
+                    data-aura-tooltip="คัดลอกคำสั่งติดตั้ง"
+                    onclick="Aura.copy('npm install auracss')"
+                  >
+                    📋 npm i auracss
+                  </button>
+                  <span class="aura-chip"
+                    ><span
+                      class="aura-dot"
+                      aria-hidden="true"
+                      style="animation: none"
+                    ></span>
+                    พร้อมใช้งาน</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="aura-my-8">
+          <div class="aura-gradient-border">
+            <div
+              class="aura-aurora aura-text-center aura-rounded-4"
+              style="padding: 4rem 1.5rem"
+            >
+              <h2 class="section-title aura-mb-3">
+                พร้อมแล้ว <span class="aura-text-aurora">ลงมือเลย</span>
+              </h2>
+              <p class="aura-muted aura-mb-5">
+                ติดตั้งในหนึ่งบรรทัด ใช้ได้กับทุกเฟรมเวิร์ก
+              </p>
+              <div class="aura-code-box aura-mx-auto" style="max-width: 420px">
+                <span style="color: var(--aura-cyber); font-weight: 700"
+                  >$</span
+                >
+                <span>npm install auracss</span>
+                <button
+                  class="aura-copy-btn"
+                  type="button"
+                  onclick="Aura.copy('npm install auracss')"
+                >
+                  📋 คัดลอก
+                </button>
+              </div>
+              <button
+                class="aura-btn aura-btn-glass aura-btn-sm"
+                type="button"
+                data-aura-toggle="modal"
+                data-aura-target="#modal-install"
+              >
+                วิธีติดตั้ง
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ❓ 4. FAQ ACCORDION -->
+
+      </div>
+      <section id="faq" style="max-width: 800px; margin: 6rem auto">
+        <div style="text-align: center; margin-bottom: 3rem">
+          <span class="aura-badge aura-badge-outline">Q&A</span>
+          <h2 style="font-size: 2rem; margin-top: 0.5rem">คำถามที่พบบ่อย</h2>
+        </div>
+
+        <div class="aura-accordion">
+          <div class="aura-accordion-item">
+            <button
+              class="aura-accordion-header"
+              id="faq-a-button"
+              data-aura-toggle="accordion"
+              aria-controls="faq-a"
+            >
+              AuraCSS แตกต่างจาก CSS Framework ทั่วไปอย่างไร? <span>▾</span>
+            </button>
+            <div
+              class="aura-accordion-content"
+              id="faq-a"
+              role="region"
+              aria-labelledby="faq-a-button"
+            >
+              <div class="aura-accordion-body">
+                AuraCSS โฟกัสไปที่เอฟเฟกต์แสงไฟ (Ambient Lighting) และ
+                Micro-interactions ยุคใหม่ เช่น แสงไฟสปอร์ตไลท์ตามเมาส์,
+                ขอบลำแสงหมุนวน 360 องศา โดยคุณไม่ต้องเสียเวลาเขียนโค้ด Shader
+                หรือคำนวณคณิตศาสตร์ซับซ้อนเอง
+              </div>
+            </div>
+          </div>
+          <div class="aura-accordion-item">
+            <button
+              class="aura-accordion-header"
+              id="faq-b-button"
+              data-aura-toggle="accordion"
+              aria-controls="faq-b"
+            >
+              รองรับการใช้งานร่วมกับ React, Vue หรือ Next.js หรือไม่?
+              <span>▾</span>
+            </button>
+            <div
+              class="aura-accordion-content"
+              id="faq-b"
+              role="region"
+              aria-labelledby="faq-b-button"
+            >
+              <div class="aura-accordion-body">
+                รองรับ 100% เพราะสร้างขึ้นด้วย Pure CSS และ Vanilla JS
+                ที่เป็นมาตรฐานเว็บแท้ สามารถ Import
+                ไปใช้ได้กับทุกเฟรมเวิร์กในโลก
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- FOOTER -->
+    <footer class="aura-border-top aura-mt-8 site-footer">
+      <div class="aura-container">
+        <div class="aura-row aura-g-5">
+          <div class="col-12 col-md-4">
+            <h3 class="aura-footer-brand site-footer-brand">
+              <img
+                class="aura-brand-logo"
+                src="public/images/logo/aura_css_logo_animated.svg"
+                alt=""
+              />
+              <span>AURA<span class="aura-text-gradient">CSS</span></span>
+            </h3>
+            <p class="aura-muted site-footer-copy">
+              สร้างขึ้นเพื่อยกระดับสุนทรียภาพแห่งการทำเว็บไซต์
+              นำเสนอการโต้ตอบที่ลื่นไหลและดีไซน์ระดับโลก
+            </p>
+            <div class="aura-muted aura-fs-sm">MIT License © 2026 AuraCSS</div>
+          </div>
+          <div class="col-6 col-md-2">
+            <h4 class="site-footer-heading">ลิงก์ด่วน</h4>
+            <ul class="aura-muted site-footer-links">
+              <li><a href="#bento">Bento Grid</a></li>
+              <li><a href="#kit">คอมโพเนนต์</a></li>
+              <li><a href="#system">ระบบ Grid</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2">
+            <h4 class="site-footer-heading">คอมมูนิตี้</h4>
+            <ul class="aura-muted site-footer-links">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Discord</a></li>
+              <li><a href="#">Twitter / X</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4">
+            <h4 class="site-footer-heading">ติดตามข่าวสารล่าสุด</h4>
+            <p class="aura-muted site-footer-newsletter-copy">
+              รับเทคนิคการดีไซน์ UI และอัปเดตเวอร์ชันใหม่ก่อนใคร
+            </p>
+            <div class="site-footer-newsletter-form">
+              <label class="aura-sr-only" for="newsletter-email"
+                >อีเมลของคุณ</label
+              >
+              <input
+                class="aura-input"
+                id="newsletter-email"
+                type="email"
+                autocomplete="email"
+                placeholder="กรอกอีเมลของคุณ"
+              />
+              <button
+                class="aura-btn aura-btn-cosmic"
+                type="button"
+                onclick="
+                  Aura.toast({
+                    title: 'ตัวอย่างฟอร์ม',
+                    message: 'แบบฟอร์มนี้ยังไม่ได้เชื่อมต่อระบบรับข่าวสาร',
+                    type: 'info',
+                  })
+                "
+              >
+                ติดตาม
+              </button>
+            </div>
+            <p class="aura-muted aura-fs-xs aura-mt-2">
+              แบบฟอร์มตัวอย่าง ยังไม่ได้เชื่อมต่อระบบรับข่าวสาร
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- QUICK INSTALL MODAL -->
+    <div
+      class="aura-modal-backdrop"
+      id="modal-install"
+      aria-hidden="true"
+      aria-labelledby="modal-install-title"
+    >
+      <div
+        class="aura-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-install-title"
+        aria-describedby="modal-install-description"
+      >
+        <h3 id="modal-install-title" class="aura-mb-2">
+          ⚡ เริ่มต้นใช้งาน AuraCSS
+        </h3>
+        <p
+          id="modal-install-description"
+          class="aura-muted aura-fs-sm aura-mb-5"
+        >
+          นำลิงก์ CSS ไปวางในแท็ก <code>&lt;head&gt;</code> ของเว็บคุณ
+        </p>
+        <div class="aura-code-box">
+          <code class="install-snippet"
+            >&lt;link rel="stylesheet" href="dist/aura.css"&gt;</code
+          >
+          <button
+            class="aura-copy-btn"
+            type="button"
+            onclick="
+              Aura.copy(
+                '&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/aura.css&quot;&gt;',
+              )
+            "
+          >
+            📋 คัดลอก
+          </button>
+        </div>
+        <div class="aura-d-flex aura-justify-content-end aura-mt-5">
+          <button
+            class="aura-btn aura-btn-cosmic aura-btn-sm"
+            type="button"
+            data-aura-dismiss="modal"
+          >
+            ปิด
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFCANVAS -->
+    <aside
+      class="aura-offcanvas aura-offcanvas-end"
+      id="panel-theme"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-label="ตั้งค่าธีม"
+    >
+      <div class="aura-offcanvas-header">
+        <h3 class="aura-mb-0">ตั้งค่าธีม</h3>
+        <button
+          class="aura-btn-close"
+          type="button"
+          data-aura-dismiss="offcanvas"
+          aria-label="ปิด"
+        >
+          ×
+        </button>
+      </div>
+      <p class="aura-muted aura-fs-sm">
+        เลือกโหมดแสงที่ต้องการ ระบบจะจำค่าไว้ให้
+      </p>
+      <div class="aura-stack">
+        <button
+          class="aura-btn aura-btn-glass aura-btn-block"
+          type="button"
+          onclick="Aura.setTheme('dark')"
+        >
+          🌙 Dark
+        </button>
+        <button
+          class="aura-btn aura-btn-glass aura-btn-block"
+          type="button"
+          onclick="Aura.setTheme('light')"
+        >
+          ☀️ Light
+        </button>
+        <button
+          class="aura-btn aura-btn-glass aura-btn-block"
+          type="button"
+          onclick="Aura.setTheme('system')"
+        >
+          💻 ตามระบบ
+        </button>
+      </div>
+    </aside>
+
+    <script src="dist/aura.js"></script>
+  </body>
+</html>

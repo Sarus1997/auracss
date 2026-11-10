@@ -1,0 +1,136 @@
+/* --- NAVBAR (Fixed & Solid Floating Glass) --- */
+.aura-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+  max-width: 1140px;
+  margin: 1.25rem auto;
+  padding: 0.75rem 1.75rem;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius-full);
+  position: sticky;
+  top: 1rem;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+[data-aura-theme="light"] .aura-navbar {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: light) {
+  [data-aura-theme="system"] .aura-navbar {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.aura-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--aura-text);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.aura-brand-logo {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.aura-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.aura-footer-brand .aura-brand-logo {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.aura-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.aura-nav-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.aura-nav-menu a {
+  color: var(--aura-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.aura-nav-menu a:hover {
+  color: var(--aura-text);
+}
+
+.aura-burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--aura-text);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .aura-burger {
+    position: relative;
+    z-index: 1060;
+    display: block;
+  }
+
+  .aura-nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(280px, 85vw);
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    background: var(--aura-bg);
+    border-left: 1px solid var(--aura-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    transform: translateX(0.5rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, visibility 0s linear 0.35s;
+    z-index: 1050;
+    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.6);
+  }
+
+  .aura-nav-menu.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, visibility 0s;
+  }
+}

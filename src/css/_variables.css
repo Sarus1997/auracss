@@ -1,0 +1,158 @@
+/* ============================================================
+   AuraCSS — Design Tokens  (ทุกตัวแปรขึ้นต้นด้วย --aura- เสมอ)
+   หมายเหตุ: CSS variable ใช้ใน @media ไม่ได้ จึงเก็บ breakpoint ไว้เป็นข้อมูลอ้างอิง
+   sm 576 · md 768 · lg 992 · xl 1200 · xxl 1400
+   ============================================================ */
+:root {
+  /* Layout */
+  --aura-container: 1200px;
+  --aura-container-sm: 540px;
+  --aura-container-md: 720px;
+  --aura-container-lg: 960px;
+  --aura-container-xl: 1140px;
+  --aura-container-xxl: 1320px;
+  --aura-container-padding: 1rem;
+  --aura-gutter-x: 1.5rem;
+  --aura-gutter-y: 0;
+  --aura-bp-sm: 576px;
+  --aura-bp-md: 768px;
+  --aura-bp-lg: 992px;
+  --aura-bp-xl: 1200px;
+  --aura-bp-xxl: 1400px;
+
+  /* Spacing scale */
+  --aura-space-0: 0;
+  --aura-space-1: .25rem;
+  --aura-space-2: .5rem;
+  --aura-space-3: .75rem;
+  --aura-space-4: 1rem;
+  --aura-space-5: 1.5rem;
+  --aura-space-6: 2rem;
+  --aura-space-7: 3rem;
+  --aura-space-8: 4rem;
+
+  /* Typography */
+  --aura-font-sans: 'Plus Jakarta Sans', 'Noto Sans Thai', system-ui, sans-serif;
+  --aura-font-mono: ui-monospace, 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --aura-fs-xs: .75rem;
+  --aura-fs-sm: .875rem;
+  --aura-fs-base: 1rem;
+  --aura-fs-lg: 1.125rem;
+  --aura-fs-xl: 1.25rem;
+  --aura-fs-2xl: 1.5rem;
+  --aura-fs-3xl: 1.875rem;
+  --aura-fs-4xl: 2.25rem;
+  --aura-fs-5xl: 3rem;
+  --aura-fs-6xl: 4rem;
+  --aura-lh-tight: 1.2;
+  --aura-lh-base: 1.6;
+  --aura-lh-loose: 1.9;
+
+  /* Palette (+ rgb triplet สำหรับทำ alpha: rgba(var(--aura-cosmic-rgb), .3)) */
+  --aura-cosmic: #6366f1;
+  --aura-cosmic-rgb: 99, 102, 241;
+  --aura-violet: #a855f7;
+  --aura-violet-rgb: 168, 85, 247;
+  --aura-cyber: #06b6d4;
+  --aura-cyber-rgb: 6, 182, 212;
+  --aura-emerald: #10b981;
+  --aura-emerald-rgb: 16, 185, 129;
+  --aura-sunset: #f97316;
+  --aura-sunset-rgb: 249, 115, 22;
+  --aura-amber: #f59e0b;
+  --aura-amber-rgb: 245, 158, 11;
+  --aura-rose: #f43f5e;
+  --aura-rose-rgb: 244, 63, 94;
+
+  /* Semantic */
+  --aura-primary: var(--aura-cosmic);
+  --aura-primary-rgb: var(--aura-cosmic-rgb);
+  --aura-success: var(--aura-emerald);
+  --aura-success-rgb: var(--aura-emerald-rgb);
+  --aura-warning: var(--aura-amber);
+  --aura-warning-rgb: var(--aura-amber-rgb);
+  --aura-danger: var(--aura-rose);
+  --aura-danger-rgb: var(--aura-rose-rgb);
+  --aura-info: var(--aura-cyber);
+  --aura-info-rgb: var(--aura-cyber-rgb);
+
+  /* Gradients */
+  --aura-grad-cosmic: linear-gradient(135deg, #6366f1, #a855f7);
+  --aura-grad-cyber: linear-gradient(135deg, #06b6d4, #3b82f6);
+  --aura-grad-emerald: linear-gradient(135deg, #10b981, #84cc16);
+  --aura-grad-sunset: linear-gradient(135deg, #f97316, #f43f5e);
+  --aura-grad-aurora: linear-gradient(120deg, #6366f1, #06b6d4, #10b981, #a855f7, #6366f1);
+  --aura-cosmic-glow: rgba(var(--aura-cosmic-rgb), .35);
+  --aura-cyber-glow: rgba(var(--aura-cyber-rgb), .35);
+  --aura-emerald-glow: rgba(var(--aura-emerald-rgb), .35);
+  --grad-cosmic: var(--aura-grad-cosmic);
+  --grad-cosmic-strong: var(--aura-grad-cosmic);
+  --grad-cyber: var(--aura-grad-cyber);
+  --grad-emerald: var(--aura-grad-emerald);
+  --grad-sunset: var(--aura-grad-sunset);
+  --grad-aurora: var(--aura-grad-aurora);
+
+  /* Radius */
+  --aura-radius-0: 0;
+  --aura-radius-1: .25rem;
+  --aura-radius-2: .5rem;
+  --aura-radius-3: .75rem;
+  --aura-radius-4: 1rem;
+  --aura-radius-5: 1.5rem;
+  --aura-radius-pill: 999px;
+
+  /* Shadows */
+  --aura-shadow-sm: 0 1px 2px rgba(0, 0, 0, .25);
+  --aura-shadow-md: 0 6px 16px rgba(0, 0, 0, .25);
+  --aura-shadow-lg: 0 16px 40px rgba(0, 0, 0, .35);
+  --aura-shadow-xl: 0 30px 70px rgba(0, 0, 0, .45);
+
+  /* Z-index */
+  --aura-z-dropdown: 1000;
+  --aura-z-sticky: 1020;
+  --aura-z-fixed: 1030;
+  --aura-z-offcanvas: 1045;
+  --aura-z-modal: 1055;
+  --aura-z-popover: 1070;
+  --aura-z-tooltip: 1080;
+  --aura-z-toast: 1090;
+
+  /* Motion */
+  --aura-ease: cubic-bezier(.22, 1, .36, 1);
+  --aura-ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --aura-duration-fast: .15s;
+  --aura-duration: .3s;
+  --aura-duration-slow: .6s;
+  --aura-transition: all var(--aura-duration) var(--aura-ease);
+  --aura-focus-ring: 0 0 0 3px rgba(var(--aura-cosmic-rgb), .45);
+}
+
+/* Dark (default) */
+:root,
+[data-aura-theme="dark"] {
+  color-scheme: dark;
+  --aura-bg: #07080f;
+  --aura-surface: rgba(255, 255, 255, .04);
+  --aura-surface-2: rgba(255, 255, 255, .08);
+  --aura-text: #e8eaf6;
+  --aura-muted: #8b90a8;
+  --aura-border: rgba(255, 255, 255, .1);
+  --aura-glass-bg: rgba(255, 255, 255, .06);
+  --aura-glass-border: rgba(255, 255, 255, .14);
+}
+
+[data-aura-theme="light"] {
+  color-scheme: light;
+  --aura-bg: #f6f7fb;
+  --aura-surface: rgba(0, 0, 0, .03);
+  --aura-surface-2: rgba(0, 0, 0, .06);
+  --aura-text: #151826;
+  --aura-muted: #5d637a;
+  --aura-border: rgba(0, 0, 0, .12);
+  --aura-glass-bg: rgba(255, 255, 255, .7);
+  --aura-glass-border: rgba(0, 0, 0, .08);
+  --aura-shadow-sm: 0 1px 2px rgba(20, 24, 50, .1);
+  --aura-shadow-md: 0 6px 16px rgba(20, 24, 50, .12);
+  --aura-shadow-lg: 0 16px 40px rgba(20, 24, 50, .16);
+  --aura-shadow-xl: 0 30px 70px rgba(20, 24, 50, .2);
+}

@@ -1,0 +1,253 @@
+/* Breadcrumb · Pagination · Nav/Pills · Stepper · Button group */
+.aura-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--aura-space-4);
+  font-size: var(--aura-fs-sm)
+}
+
+.aura-breadcrumb-item {
+  color: var(--aura-muted)
+}
+
+.aura-breadcrumb-item+.aura-breadcrumb-item::before {
+  content: "/";
+  padding-inline-end: .5rem;
+  opacity: .5
+}
+
+.aura-breadcrumb-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--aura-transition)
+}
+
+.aura-breadcrumb-item a:hover {
+  color: var(--aura-cyber)
+}
+
+.aura-breadcrumb-item.active {
+  color: var(--aura-text)
+}
+
+.aura-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+
+.aura-page-link {
+  display: grid;
+  place-items: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 .75rem;
+  border-radius: var(--aura-radius-3);
+  color: var(--aura-text);
+  text-decoration: none;
+  background: var(--aura-glass-bg);
+  border: 1px solid var(--aura-glass-border);
+  backdrop-filter: blur(10px);
+  transition: var(--aura-transition);
+  font-size: var(--aura-fs-sm)
+}
+
+.aura-page-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(var(--aura-cosmic-rgb), .6);
+  box-shadow: 0 6px 18px rgba(var(--aura-cosmic-rgb), .25)
+}
+
+.aura-page-item.active .aura-page-link {
+  background: var(--aura-grad-cosmic);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 22px rgba(var(--aura-cosmic-rgb), .5)
+}
+
+.aura-page-item.disabled .aura-page-link {
+  opacity: .4;
+  pointer-events: none
+}
+
+.aura-pagination-sm .aura-page-link {
+  min-width: 2rem;
+  height: 2rem;
+  font-size: var(--aura-fs-xs)
+}
+
+.aura-pagination-lg .aura-page-link {
+  min-width: 3rem;
+  height: 3rem;
+  font-size: var(--aura-fs-lg)
+}
+
+.aura-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+
+.aura-nav-link {
+  display: block;
+  padding: .55rem 1rem;
+  color: var(--aura-muted);
+  text-decoration: none;
+  border-radius: var(--aura-radius-pill);
+  transition: var(--aura-transition)
+}
+
+.aura-nav-link:hover {
+  color: var(--aura-text);
+  background: var(--aura-surface-2)
+}
+
+.aura-nav-link.active {
+  color: #fff
+}
+
+.aura-nav-pills .aura-nav-link.active {
+  background: var(--aura-grad-cosmic);
+  box-shadow: 0 6px 20px rgba(var(--aura-cosmic-rgb), .45)
+}
+
+.aura-nav-underline {
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--aura-border)
+}
+
+.aura-nav-underline .aura-nav-link {
+  border-radius: 0;
+  padding-inline: 0;
+  position: relative
+}
+
+.aura-nav-underline .aura-nav-link.active {
+  color: var(--aura-text)
+}
+
+.aura-nav-underline .aura-nav-link.active::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: var(--aura-grad-aurora);
+  background-size: 200% 100%;
+  animation: aura-kf-gradient 4s linear infinite
+}
+
+.aura-nav-vertical {
+  flex-direction: column
+}
+
+.aura-nav-fill>.aura-nav-link {
+  flex: 1 1 auto;
+  text-align: center
+}
+
+.aura-btn-group {
+  display: inline-flex;
+  vertical-align: middle
+}
+
+.aura-btn-group>.aura-btn:not(:first-child) {
+  margin-inline-start: -1px;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0
+}
+
+.aura-btn-group>.aura-btn:not(:last-child) {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0
+}
+
+.aura-btn-group-vertical {
+  display: inline-flex;
+  flex-direction: column
+}
+
+.aura-btn-group-vertical>.aura-btn:not(:first-child) {
+  margin-top: -1px;
+  border-start-start-radius: 0;
+  border-start-end-radius: 0
+}
+
+.aura-btn-group-vertical>.aura-btn:not(:last-child) {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0
+}
+
+.aura-btn-block {
+  display: flex;
+  width: 100%
+}
+
+.aura-stepper {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: aura-step
+}
+
+.aura-step {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  color: var(--aura-muted);
+  font-size: var(--aura-fs-sm);
+  counter-increment: aura-step
+}
+
+.aura-step::before {
+  content: counter(aura-step);
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0 auto .5rem;
+  border-radius: 50%;
+  background: var(--aura-surface-2);
+  border: 1px solid var(--aura-border);
+  position: relative;
+  z-index: 1;
+  transition: var(--aura-transition)
+}
+
+.aura-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  inset-inline: calc(50% + 1.5rem) calc(-50% + 1.5rem);
+  height: 2px;
+  background: var(--aura-border)
+}
+
+.aura-step.done::before,
+.aura-step.active::before {
+  background: var(--aura-grad-cosmic);
+  border-color: transparent;
+  color: #fff
+}
+
+.aura-step.active::before {
+  box-shadow: 0 0 0 6px rgba(var(--aura-cosmic-rgb), .2), 0 0 24px rgba(var(--aura-cosmic-rgb), .6)
+}
+
+.aura-step.done::after {
+  background: var(--aura-cosmic)
+}
+
+.aura-step.active,
+.aura-step.done {
+  color: var(--aura-text)
+}

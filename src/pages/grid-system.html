@@ -1,0 +1,106 @@
+<!-- GRID SYSTEM -->
+        <section id="system" class="aura-my-8">
+          <div class="aura-text-center aura-mb-7">
+            <span class="aura-badge aura-badge-emerald"
+              >Bootstrap-style System</span
+            >
+            <h2 class="section-title aura-mt-3">กริดและยูทิลิตี้ ครบมือ</h2>
+            <p class="aura-muted">
+              ย่อหน้าต่างให้เห็นการเรียงตัวใหม่ตาม breakpoint
+            </p>
+          </div>
+
+          <div class="aura-row aura-g-5 aura-align-items-start">
+            <div class="col-12 col-lg-6">
+              <div class="aura-card">
+                <h3 class="aura-fs-xl aura-mb-4">
+                  Live Grid: <code>col-12 col-md-6 col-xl-3</code>
+                </h3>
+                <div class="aura-row aura-g-2">
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">1</div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">2</div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">3</div>
+                  </div>
+                  <div class="col-12 col-md-6 col-xl-3">
+                    <div class="demo-cell">4</div>
+                  </div>
+                </div>
+                <div class="aura-hr"></div>
+                <p class="aura-muted aura-fs-sm aura-mb-0">
+                  <span class="aura-d-md-none"
+                    >กำลังแสดง: มือถือ (1 คอลัมน์)</span
+                  >
+                  <span class="aura-d-none aura-d-md-inline aura-d-xl-none"
+                    >กำลังแสดง: แท็บเล็ต (2 คอลัมน์)</span
+                  >
+                  <span class="aura-d-none aura-d-xl-inline"
+                    >กำลังแสดง: เดสก์ท็อป (4 คอลัมน์)</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="aura-tabs" data-aura-tabs>
+                <button
+                  class="aura-tab"
+                  type="button"
+                  data-aura-tab
+                  data-aura-target="#t-grid"
+                  aria-selected="true"
+                >
+                  Grid
+                </button>
+                <button
+                  class="aura-tab"
+                  type="button"
+                  data-aura-tab
+                  data-aura-target="#t-util"
+                  aria-selected="false"
+                >
+                  Utilities
+                </button>
+                <button
+                  class="aura-tab"
+                  type="button"
+                  data-aura-tab
+                  data-aura-target="#t-fx"
+                  aria-selected="false"
+                >
+                  Effects
+                </button>
+              </div>
+              <div class="aura-tab-panel" id="t-grid">
+                <pre
+                  class="code-pane aura-glass"
+                ><span class="tok-c">.aura-container</span>  <span class="tok-d">/* --aura-container */</span>
+<span class="tok-c">.aura-row</span> <span class="tok-m">.aura-g-4</span>
+<span class="tok-c">.col-md-6</span> <span class="tok-m">.offset-lg-2</span>
+<span class="tok-c">.aura-order-md-first</span>
+<span class="tok-c">.aura-row-cols-lg-3</span></pre>
+              </div>
+              <div class="aura-tab-panel" id="t-util" hidden>
+                <pre
+                  class="code-pane aura-glass"
+                ><span class="tok-c">aura-d-md-flex</span> <span class="tok-c">aura-justify-content-between</span>
+<span class="tok-m">aura-p-4</span> <span class="tok-m">aura-mx-auto</span> <span class="tok-m">aura-gap-5</span>
+<span class="tok-e">aura-text-cyber</span> <span class="tok-e">aura-bg-grad-sunset</span>
+<span class="tok-c">aura-rounded-pill</span> <span class="tok-c">aura-shadow-lg</span>
+<span class="tok-m">aura-position-absolute aura-top-0</span></pre>
+              </div>
+              <div class="aura-tab-panel" id="t-fx" hidden>
+                <pre
+                  class="code-pane aura-glass"
+                ><span class="tok-e">aura-aurora</span> <span class="tok-e">aura-gradient-border</span>
+<span class="tok-c">aura-text-aurora</span> <span class="tok-c">aura-text-glow</span>
+<span class="tok-m">aura-hover-lift</span> <span class="tok-m">aura-hover-glow</span>
+<span class="tok-e">aura-animate-up aura-delay-2</span>
+<span class="tok-c">aura-marquee</span></pre>
+              </div>
+            </div>
+          </div>
+        </section>

@@ -1,0 +1,25 @@
+{
+  "name": "@sarus1997/auracss",
+  "version": "3.2.0",
+  "description": "Dependency-free responsive CSS and vanilla JavaScript UI framework",
+  "main": "dist/aura.js",
+  "style": "dist/aura.css",
+  "scripts": {
+    "build": "node build.js",
+    "check": "node --check src/aura.js && node --check build.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "css",
+    "framework",
+    "glassmorphism",
+    "modern-ui",
+    "spotlight",
+    "responsive",
+    "utilities",
+    "design-system"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,182 @@
+/* --- BUTTONS & RIPPLE EFFECT --- */
+.aura-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--aura-radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  text-decoration: none;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.aura-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--aura-focus);
+}
+
+.aura-btn:disabled,
+.aura-btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.aura-btn-cosmic,
+.aura-btn-primary {
+  background: var(--grad-cosmic-strong);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--aura-cosmic-glow);
+}
+
+.aura-btn-cosmic:hover,
+.aura-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px var(--aura-cosmic-glow);
+}
+
+.aura-btn-glass {
+  background: var(--aura-surface);
+  color: var(--aura-text);
+  border-color: var(--aura-border);
+  backdrop-filter: var(--aura-blur);
+}
+
+.aura-btn-glass:hover {
+  background: var(--aura-surface-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.aura-btn-cyber {
+  background: var(--grad-cyber);
+  color: #082f49;
+  box-shadow: 0 4px 18px var(--aura-cyber-glow);
+}
+
+.aura-btn-emerald {
+  background: var(--grad-emerald);
+  color: #052e24;
+  box-shadow: 0 4px 18px var(--aura-emerald-glow);
+}
+
+.aura-btn-secondary {
+  background: var(--aura-secondary);
+  color: #fff;
+}
+
+.aura-btn-success {
+  background: var(--aura-success);
+  color: #052e24;
+}
+
+.aura-btn-warning {
+  background: var(--aura-warning);
+  color: #422006;
+}
+
+.aura-btn-danger {
+  background: #b91c1c;
+  color: #fff;
+}
+
+.aura-btn-sunset {
+  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  color: #422006;
+  box-shadow: 0 4px 18px rgba(255, 126, 95, 0.35);
+}
+
+.aura-btn-outline {
+  background: transparent;
+  color: var(--aura-text);
+  border-color: var(--aura-border);
+}
+
+.aura-btn-outline:hover {
+  border-color: var(--aura-cosmic);
+  color: var(--aura-text);
+  transform: translateY(-2px);
+}
+
+.aura-btn-block {
+  width: 100%;
+}
+
+.aura-btn-link {
+  padding: 0;
+  color: var(--aura-primary-text);
+  background: transparent;
+  border-color: transparent;
+}
+
+.aura-btn-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+}
+
+.aura-btn-pill {
+  border-radius: var(--aura-radius-full);
+}
+
+.aura-btn-sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+}
+
+.aura-btn-lg {
+  padding: 0.95rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+.aura-btn-icon.aura-btn-sm {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+.aura-btn-icon.aura-btn-lg {
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+}
+
+.aura-btn-loading {
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.aura-btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: aura-spin 0.7s linear infinite;
+}
+
+.aura-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: aura-ripple-anim 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes aura-ripple-anim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,97 @@
+<!-- QUICK INSTALL MODAL -->
+    <div
+      class="aura-modal-backdrop"
+      id="modal-install"
+      aria-hidden="true"
+      aria-labelledby="modal-install-title"
+    >
+      <div
+        class="aura-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-install-title"
+        aria-describedby="modal-install-description"
+      >
+        <h3 id="modal-install-title" class="aura-mb-2">
+          ⚡ เริ่มต้นใช้งาน AuraCSS
+        </h3>
+        <p
+          id="modal-install-description"
+          class="aura-muted aura-fs-sm aura-mb-5"
+        >
+          นำลิงก์ CSS ไปวางในแท็ก <code>&lt;head&gt;</code> ของเว็บคุณ
+        </p>
+        <div class="aura-code-box">
+          <code class="install-snippet"
+            >&lt;link rel="stylesheet" href="dist/aura.css"&gt;</code
+          >
+          <button
+            class="aura-copy-btn"
+            type="button"
+            onclick="
+              Aura.copy(
+                '&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/aura.css&quot;&gt;',
+              )
+            "
+          >
+            📋 คัดลอก
+          </button>
+        </div>
+        <div class="aura-d-flex aura-justify-content-end aura-mt-5">
+          <button
+            class="aura-btn aura-btn-cosmic aura-btn-sm"
+            type="button"
+            data-aura-dismiss="modal"
+          >
+            ปิด
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFCANVAS -->
+    <aside
+      class="aura-offcanvas aura-offcanvas-end"
+      id="panel-theme"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-label="ตั้งค่าธีม"
+    >
+      <div class="aura-offcanvas-header">
+        <h3 class="aura-mb-0">ตั้งค่าธีม</h3>
+        <button
+          class="aura-btn-close"
+          type="button"
+          data-aura-dismiss="offcanvas"
+          aria-label="ปิด"
+        >
+          ×
+        </button>
+      </div>
+      <p class="aura-muted aura-fs-sm">
+        เลือกโหมดแสงที่ต้องการ ระบบจะจำค่าไว้ให้
+      </p>
+      <div class="aura-stack">
+        <button
+          class="aura-btn aura-btn-glass aura-btn-block"
+          type="button"
+          onclick="Aura.setTheme('dark')"
+        >
+          🌙 Dark
+        </button>
+        <button
+          class="aura-btn aura-btn-glass aura-btn-block"
+          type="button"
+          onclick="Aura.setTheme('light')"
+        >
+          ☀️ Light
+        </button>
+        <button
+          class="aura-btn aura-btn-glass aura-btn-block"
+          type="button"
+          onclick="Aura.setTheme('system')"
+        >
+          💻 ตามระบบ
+        </button>
+      </div>
+    </aside>

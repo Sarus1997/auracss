@@ -1,0 +1,153 @@
+/* --- FORMS & INPUT CONTROLS --- */
+.aura-input,
+.aura-select,
+.aura-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--aura-text);
+  background: var(--aura-surface);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius-sm);
+  transition: var(--transition);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.aura-input::placeholder,
+.aura-textarea::placeholder {
+  color: var(--aura-text-muted);
+}
+
+.aura-input:hover,
+.aura-select:hover,
+.aura-textarea:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.aura-input:focus,
+.aura-select:focus,
+.aura-textarea:focus {
+  outline: none;
+  border-color: var(--aura-cosmic);
+  box-shadow: var(--aura-focus);
+}
+
+.aura-textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.aura-input-sm,
+.aura-select-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.aura-input-lg,
+.aura-select-lg {
+  padding: 1rem 1.125rem;
+  font-size: 1.05rem;
+}
+
+.aura-label {
+  display: inline-block;
+  margin-bottom: 0.375rem;
+  color: var(--aura-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.aura-help,
+.aura-form-help {
+  display: block;
+  margin-top: 0.375rem;
+  color: var(--aura-text-muted);
+  font-size: 0.825rem;
+}
+
+.aura-input[aria-invalid="true"],
+.aura-select[aria-invalid="true"],
+.aura-textarea[aria-invalid="true"] {
+  border-color: var(--aura-danger);
+}
+
+input.aura-check,
+input.aura-radio {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: var(--aura-primary);
+  vertical-align: middle;
+}
+
+.aura-form-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--aura-text);
+  cursor: pointer;
+}
+
+.aura-form-check:has(:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.aura-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--aura-text);
+  cursor: pointer;
+}
+
+.aura-switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.aura-switch-track {
+  position: relative;
+  width: 2.6rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius-full);
+  background: var(--aura-surface-hover);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.aura-switch-track::after {
+  content: "";
+  position: absolute;
+  top: 0.15rem;
+  left: 0.15rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--aura-text-muted);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.aura-switch input:checked + .aura-switch-track {
+  border-color: var(--aura-primary);
+  background: var(--aura-primary);
+}
+
+.aura-switch input:checked + .aura-switch-track::after {
+  background: #fff;
+  transform: translateX(1.1rem);
+}
+
+.aura-switch input:focus-visible + .aura-switch-track {
+  box-shadow: var(--aura-focus);
+}
+
+.aura-switch input:disabled + .aura-switch-track {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
