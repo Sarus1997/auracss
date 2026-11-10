@@ -1,6 +1,6 @@
 {
-  "name": "@sarus1997/auracss",
-  "version": "3.2.1",
+  "name": "aura-ui",
+  "version": "3.2.2",
   "description": "Dependency-free responsive CSS and vanilla JavaScript UI framework",
   "main": "dist/aura.js",
   "style": "dist/aura.css",
